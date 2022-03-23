@@ -1,15 +1,970 @@
 ---
-title: "My Website"
+title: "SCG analysis of Western Atlantic MAGs"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Detailed workflow & data products
 site: distill::distill_website
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
+```{r setup, message=FALSE, results = 'hide', echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+set.seed(119)
+#library(conflicted)
+library(phyloseq); packageVersion("phyloseq")
+library(Biostrings); packageVersion("Biostrings")
+pacman::p_load(tidyverse, magrittr,
+               codefolder, ggpubr, htmltools,
+               reactable, downloadthis, captioner,
+               install = FALSE, update = FALSE)
+options(scipen=999)
+knitr::opts_current$get(c(
+  "cache",
+  "cache.path",
+  "cache.rebuild",
+  "dependson",
+  "autodep"
+))
 ```
+
+```{r, echo=FALSE, eval=TRUE}
+xaringanExtra::use_panelset()
+```
+
+```{r, xaringanExtra-clipboard, echo=FALSE, eval=TRUE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clone fa-2x\" style=\"color: #301e64\"></i>",
+    success_text = "<i class=\"fa fa-check fa-2x\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times fa-2x\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+```{r, message=FALSE, results = 'hide', eval=TRUE, echo=FALSE}
+remove(list = ls())
+load("page_build/index.rdata")
+```
+
+```{r, message=FALSE, results = 'hide', eval=TRUE, echo=FALSE}
+### COmmon formatting scripts
+### NOTE: captioner.R must be read BEFORE captions_XYZ.R
+source("assets/captioner/captioner.R")
+source("assets/captioner/captions/captions.R")
+source("assets/reactable/download_this_fun.R")
+#source("assets/reactable/styles.R")
+#source("assets/reactable/table_functions/dada2.R")
+```
+
+# Description of Data Products
+
+The link below gives access to all data and data products generated in the workflow. 
+
+```{r, eval=TRUE, echo=FALSE}
+download_dir(
+  path = "files/",
+  output_name = "WA_MAG_SCG_analysis_files",
+  button_label = "Download the full data pack here",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+
+> Note: the sub directiories **12_COVERAGE** and  **12_DETECTION** contain the final coverage/detection data for each MAG. See below for a description of all data products.
+
+There are a number of data products generated in this workflow. Below is a description of each piece from this puzzle and links to download the data. Some of this information is redundant, others may not be useful, but all are included here for posterity. 
+
+First, a description of individual tables. 
+
+::: l-body-outset
+
+| **file name**                                                                      | **description **                                                                                                                                 |   |   |   |   |   |   |   |   |
+|------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|---|---|---|---|---|
+| [00_WA-MAGS.txt](files/00_WA-MAGS.txt)                                             | list of all MAGs in the collection.                                                                                                              |   |   |   |   |   |   |   |   |
+| [01_hmm_hits_info.txt](files/01_hmm_hits_info.txt)                                 | description of each HMM profiles in the WA contigs database                                                                                      |   |   |   |   |   |   |   |   |
+| [02_Archaea_76.txt](files/02_Archaea_76.txt)                                       | description of Archaea_76 HMM profile.                                                                                                           |   |   |   |   |   |   |   |   |
+| [02_Bacteria_71.txt](files/02_Bacteria_71.txt)                                     | description of Bacteria_71 HMM profile.                                                                                                          |   |   |   |   |   |   |   |   |
+| [03_GTDB_Taxonomy.txt](files/03_GTDB_Taxonomy.txt)                                 | list of GTDB taxonomy genes.                                                                                                                     |   |   |   |   |   |   |   |   |
+| [04_SCG_master_list.txt](files/04_SCG_master_list.txt)                             | master list of all SCG used in this analysis.                                                                                                    |   |   |   |   |   |   |   |   |
+| [05_WA-MAG-COMPLETENESS.txt](files/05_WA-MAG-COMPLETENESS.txt)                     | completion estimates & genome statistics for each MAG.                                                                                           |   |   |   |   |   |   |   |   |
+| [05_WA-MAG-TAXONOMY.txt](files/05_WA-MAG-TAXONOMY.txt)                             | GTDB taxonomy estimates for each MAG.                                                                                                            |   |   |   |   |   |   |   |   |
+| [06_MAG_TAXONOMY_and_COMPLETENESS.txt](files/06_MAG_TAXONOMY_and_COMPLETENESS.txt) | combined completion & taxonomy estimates.                                                                                                        |   |   |   |   |   |   |   |   |
+| [07_WA-Archaea_76-across-MAGs.txt](files/07_WA-Archaea_76-across-MAGs.txt)         | distribution of Archaea_76 SCG across all MAGs.                                                                                                  |   |   |   |   |   |   |   |   |
+| [07_WA-Bacteria_71-across-MAGs.txt](files/07_WA-Bacteria_71-across-MAGs.txt)       | distribution of Bacteria_71 SCG across all MAGs.                                                                                                 |   |   |   |   |   |   |   |   |
+| [internal-genomes.txt](files/internal-genomes.txt)                                 | paths to CONTIGS.db & PROFILE.db for each MAG.                                                                                                   |   |   |   |   |   |   |   |   |
+:::
+
+
+::: l-body-outset
+
+Now a description of the data from the main results of the analysis. Each main directory is named by the HMM profile (`Archaea_76/` or `Bacteria_71/`) and both contain the following sub directories: 
+
+| **subdirectory**           | **description **                                                          |   |   |   |   |   |   |   |   |
+|----------------------------|---------------------------------------------------------------------------|---|---|---|---|---|---|---|---|
+| 09_HMM_HITS_PER_GENE_CALLS | details of SCG present in each MAG                                        |   |   |   |   |   |   |   |   |
+| 10_GENE_CALLER_IDS         | list of SCG IDs for each MAG                                              |   |   |   |   |   |   |   |   |
+| 11_COVERAGE_RAW            | raw output of coverage data from `anvi-script-get-hmm-hits-per-gene-call` |   |   |   |   |   |   |   |   |
+| 11_DETECTION_RAW           | raw output of detection data from `anvi-script-get-hmm-hits-per-gene-call`|   |   |   |   |   |   |   |   |
+| **12_COVERAGE**                | **final output of coverage data for each MAG**                                |   |   |   |   |   |   |   |   |
+| **12_DETECTION**               | **final output of detection data for each MAG**                               |   |   |   |   |   |   |   |   |
+
+:::
+
+
+# Generate SCG Lists
+
+The first step is to determine which HMM profiles are present in the `contigs.db`. There are a few different ways to accomplish this task. Here we run the following command:
+
+```bash
+anvi-export-table 03_CONTIGS/WA-contigs.db --table hmm_hits_info \
+                  --output-file 01_hmm_hits_info.txt
+```
+
+This command produces a file that contains information about each HMM profile in the `contigs.db`. Here I modified the output table a bit to include links to the databases. 
+
+```{r, eval=TRUE, echo=FALSE}
+hmm_hits_info <- read_delim("files/01_hmm_hits_info.txt", delim = "\t")
+```
+
+<small>`r caption_tab("hmm_hits_info")`</small>
+
+
+```{r, eval=TRUE, layout="l-page", echo=FALSE}
+seq_table <- hmm_hits_info
+reactable(seq_table,
+  defaultColDef = colDef(
+    header = function(value) gsub("_", " ", value, fixed = TRUE),
+    cell = function(value) format(value, nsmall = 1),
+    align = "left", filterable = FALSE, sortable = TRUE, resizable = TRUE,
+    footerStyle = list(fontWeight = "bold")
+    ), 
+  columns = list(
+    source = colDef(name = "Source", 
+                       sticky = "left", 
+                       style = list(borderRight = "1px solid #eee"),
+                       headerStyle = list(borderRight = "1px solid #eee"), 
+                       align = "left",
+                       minWidth = 200), 
+    doi = colDef(show = FALSE, cell = function(value) {
+      htmltools::tags$a(href = value, target = "_blank", value)
+    }
+    ),
+    #doi = colDef(sticky = "left"),
+    reference = colDef(html = TRUE, cell = function(value, index) {
+      sprintf('<a href="%s" target="_blank">%s</a>', seq_table$doi[index], value)
+    }, minWidth = 150),
+    db_link = colDef(cell = function(value) {
+      htmltools::tags$a(href = value, target = "_blank", value)
+    }, minWidth = 200),
+    search_type = colDef(sticky = "left", minWidth = 200),
+    domain = colDef(sticky = "left", minWidth = 90),
+    genes = colDef(sticky = "left", minWidth = 2000)
+    ), 
+  searchable = FALSE, defaultPageSize = 10, 
+  pageSizeOptions = c(5, 10, nrow(seq_table)), 
+  showPageSizeOptions = FALSE, highlight = TRUE, 
+  bordered = TRUE, striped = TRUE, compact = FALSE, 
+  wrap = FALSE, showSortable = FALSE, fullWidth = TRUE,
+  theme = reactableTheme(style = list(fontSize = "0.8em")))
+rm(seq_table)
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/01_hmm_hits_info.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "01_hmm_hits_info",
+    output_extension = ".csv",
+    button_label = "csv file of HMM hits info",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+For this analysis we are mainly interested in the `Archaea_76` and `Bacteria_71` profiles. Here we need to parse the `genes` column for both sources and create a master list of target single copy genes (SCG) for each. 
+
+```{r, code_folding=TRUE, eval=FALSE}
+# Archaea_76
+tmp_tbl <- hmm_hits_info[1, c(1,7)]
+tmp_tbl <- tidyr::separate_rows(tmp_tbl, "genes", sep = ", ", convert = TRUE)
+tmp_tbl[1] <- NULL 
+arch_tbl <- tmp_tbl 
+# Bacteria_71
+tmp_tbl <- hmm_hits_info[2, c(1,7)]
+tmp_tbl <- tidyr::separate_rows(tmp_tbl, "genes", sep = ", ", convert = TRUE)
+tmp_tbl[1] <- NULL 
+bact_tbl <- tmp_tbl 
+rm(tmp_tbl)
+```
+
+It would also be nice to include the [Pfam](https://pfam.xfam.org/) ID and database links for each SCG. We can get this information from the anvi'o database links provided in the table above.
+
+```{r, code_folding = TRUE, eval=FALSE}
+tmp_file <- 'https://raw.githubusercontent.com/meren/anvio/master/anvio/data/hmm/Archaea_76/genes.txt'
+download.file(tmp_file, destfile = "files/02_Archaea_76.txt")
+rm(tmp_file)
+tmp_file <- 'https://raw.githubusercontent.com/meren/anvio/master/anvio/data/hmm/Bacteria_71/genes.txt'
+download.file(tmp_file, destfile = "files/02_Bacteria_71.txt")
+rm(tmp_file)
+```
+
+Then we add the prefix `https://pfam.xfam.org/family/` to each accession number to generate a hyperlink to the Pfam database. 
+
+```{r, eval=FALSE, code_folding=TRUE}
+# Archaea_76
+tmp_tbl <- read_delim("files/02_Archaea_76.txt", delim = "\t")
+tmp_tbl$hmmsource <- NULL
+tmp_tbl$pfam_link <- tmp_tbl$accession
+tmp_tbl$pfam_link = paste0('https://pfam.xfam.org/family/', tmp_tbl$pfam_link)
+arch_tbl <- dplyr::full_join(arch_tbl, tmp_tbl, by = c("genes" = "gene"))
+rm(tmp_tbl)
+
+# Bacteria_71
+tmp_tbl <- read_delim("files/02_Bacteria_71.txt", delim = "\t")
+tmp_tbl$hmmsource <- NULL
+tmp_tbl$pfam_link <- tmp_tbl$accession
+tmp_tbl$pfam_link = paste0('https://pfam.xfam.org/family/', tmp_tbl$pfam_link)
+bact_tbl <- dplyr::full_join(bact_tbl, tmp_tbl, by = c("genes" = "gene"))
+rm(tmp_tbl)
+
+system("rm files/02_Archaea_76.txt")
+system("rm files/02_Bacteria_71.txt")
+```
+
+And then save the tables for each profile. 
+
+```{r, eval=FALSE}
+write.table(arch_tbl, "files/02_Archaea_76.txt", col.names  = TRUE, 
+            row.names = FALSE, sep = "\t", quote = FALSE)
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/02_Archaea_76.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "02_Archaea_76",
+    output_extension = ".csv",
+    button_label = "csv file of Archaea_76 genes",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+```{r, eval=FALSE}
+write.table(bact_tbl, "files/02_Bacteria_71.txt", col.names  = TRUE, 
+            row.names = FALSE, sep = "\t", quote = FALSE)
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/02_Bacteria_71.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "02_Bacteria_71",
+    output_extension = ".csv",
+    button_label = "csv file of Bacteria_71 genes",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+Sweet. 
+
+Now, we need to grab the list of all single copy genes from the [Genome Taxonomy Database](https://gtdb.ecogenomic.org/) we used in assigning taxonomy to our collection of MAGs. One way to do this is to list the files in the `GTDB/SCG_SEARCH_DATABASES` directory within anvi'o. For that, a simple bash one-liner will do the trick. Alternatively, you can assess the same information on the [anvi'o GitHub site](https://github.com/meren/anvio/tree/master/anvio/data/misc/SCG_TAXONOMY/GTDB/SCG_SEARCH_DATABASES).
+
+```{bash}
+ls -1 PATH_TO_SCG_SEARCH_DATABASES | sed 's/.gz//'
+```
+
+```{r, echo=FALSE, eval=TRUE}
+system("ls -1 /Users/scottjj/github/anvio/anvio/data/misc/SCG_TAXONOMY/GTDB/SCG_SEARCH_DATABASES | sed 's/.gz//'", 
+                   intern = TRUE)
+```
+
+```{r, echo=FALSE, eval=FALSE}
+tmp_gtdb <- system("ls -1 /Users/scottjj/github/anvio/anvio/data/misc/SCG_TAXONOMY/GTDB/SCG_SEARCH_DATABASES | sed 's/.gz//'", 
+                   intern = TRUE)
+gtdb <- data.frame(tmp_gtdb)
+gtdb <- gtdb %>% dplyr::rename("genes" = 1)
+write.table(gtdb, "files/03_GTDB_Taxonomy.txt", col.names  = TRUE, 
+            row.names = FALSE, sep = "\t", quote = FALSE)
+rm(tmp_gtdb)
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/03_GTDB_Taxonomy.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "03_GTDB_Taxonomy",
+    output_extension = ".csv",
+    button_label = "csv file of GTDB Taxonomy genes",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+Now we create a master look up table containing all SCG from `Archaea_76` and `Bacteria_71`, then indicate which SCGs are also used in the GTDB_Taxonomy. 
+
+```{r, code_folding=TRUE, eval=FALSE}
+arch_tbl$Archaea_76 <- "yes"
+bact_tbl$Bacteria_71 <- "yes"
+tmp_scg <- dplyr::full_join(arch_tbl, bact_tbl, by = c("genes", "accession", "pfam_link"), keep = FALSE)
+gtdb$GTDB_Taxonomy <- "yes"
+
+tmp_scg <- dplyr::full_join(tmp_scg, gtdb, by = c("genes" = "genes"), keep = FALSE)
+scg_table <- tmp_scg
+write.table(scg_table, "files/04_SCG_master_list.txt", col.names  = TRUE, 
+            row.names = FALSE, sep = "\t", quote = FALSE)
+rm(tmp_scg)
+```
+
+<small>`r caption_tab("SCG_master_list")`</small>
+
+```{r, eval=TRUE, layout="l-body-outset", echo=FALSE}
+seq_table <- scg_table
+reactable(seq_table,
+  defaultColDef = colDef(
+    header = function(value) gsub("_", " ", value, fixed = TRUE),
+    cell = function(value) format(value, nsmall = 1),
+    align = "left", filterable = TRUE, sortable = TRUE, resizable = TRUE,
+    footerStyle = list(fontWeight = "bold")
+    ), 
+  columns = list(
+    genes = colDef(name = "genes", 
+                       sticky = "left", 
+                       style = list(borderRight = "1px solid #eee"),
+                       headerStyle = list(borderRight = "1px solid #eee"), 
+                       align = "left",
+                       minWidth = 100), 
+    pfam_link = colDef(show = FALSE, cell = function(value) {
+      htmltools::tags$a(href = value, target = "_blank", value)
+    }
+    ),
+    accession = colDef(html = TRUE, cell = function(value, index) {
+      sprintf('<a href="%s" target="_blank">%s</a>', seq_table$pfam_link[index], value)
+    }, minWidth = 100)#,
+    ), 
+  searchable = TRUE, defaultPageSize = 5, 
+  pageSizeOptions = c(5, 10, nrow(seq_table)), 
+  showPageSizeOptions = TRUE, highlight = TRUE, 
+  bordered = TRUE, striped = TRUE, compact = FALSE, 
+  wrap = FALSE, showSortable = TRUE, fullWidth = TRUE,
+  theme = reactableTheme(style = list(fontSize = "0.8em")))
+rm(seq_table)
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/04_SCG_master_list.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "04_SCG_master_list",
+    output_extension = ".csv",
+    button_label = "csv file of all SCG",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+> It is important to note that `Archaea_76` and `Bacteria_71` share **`r nrow(scg_table %>% filter(!is.na(Archaea_76), !is.na(Bacteria_71)) )`** SCGs, `r nrow(scg_table %>% filter(!is.na(Archaea_76), !is.na(Bacteria_71),  !is.na(GTDB_Taxonomy)))` of which are GTDB taxonomy genes. 
+
+# MAG Taxonomy & Completeness
+
+Now we can generate some stats about our MAG collection. We define a MAG as:
+
+- Greater than 70% completion AND less than 10% redundancy 
+
+OR
+
+- Larger than 1Mb genome size AND less than 10% redundancy 
+
+What this means is that even if a bin has < 70% completion, we call it a MAG as long as it is > 1Mb in size. MAGs are denoted by the prefix `WA_MAG`. We also included 9 bins in this collection that had 10 or more total GTDB SCGs, despite not meeting either of the criteria described above. These are denoted by the prefix `WA_Bin`.  
+
+First, let's estimate MAG taxonomy. Here we add the flag `--compute-scg-coverages` to calculate coverage statistics of single-copy core genes for which we have taxonomic information. **Note this is not the same as computing coverage statistics for the entire MAG**, which we will do later in the workflow. 
+
+```bash
+anvi-estimate-scg-taxonomy --profile-db 06_MERGED/WA/PROFILE.db \
+                           --contigs-db 03_CONTIGS/WA-contigs.db  \
+                           --output-file 05_WA-MAG-TAXONOMY.txt  \
+                           --compute-scg-coverages  \
+                           --collection-name DASTOOL_MAGS
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/05_WA-MAG-TAXONOMY.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "05_WA-MAG-TAXONOMY",
+    output_extension = ".csv",
+    button_label = "csv file of MAG Taxonomy",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+Then we estimate genome completeness.
+
+```bash
+anvi-estimate-genome-completeness --contigs-db 03_CONTIGS/WA-contigs.db \
+                                  --profile-db 06_MERGED/WA/PROFILE.db \
+                                  --collection-name DASTOOL_MAGS \
+                                  --output-file 05_WA-MAG-COMPLETENESS.txt
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/05_WA-MAG-COMPLETENESS.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "05_WA-MAG-COMPLETENESS",
+    output_extension = ".csv",
+    button_label = "csv file of MAG Completeness",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+
+```{r, eval=TRUE, echo=FALSE}
+mag_tax <- read_delim("files/05_WA-MAG-TAXONOMY.txt", delim = "\t")
+mag_comp <- read_delim("files/05_WA-MAG-COMPLETENESS.txt", delim = "\t")
+mag_summary <- dplyr::full_join(mag_comp, mag_tax, by = c("bin name" = "bin_name"))
+write.table(mag_summary, "files/06_MAG_TAXONOMY_and_COMPLETENESS.txt", col.names  = TRUE, 
+            row.names = FALSE, sep = "\t", quote = FALSE)
+tmp_mag <- mag_summary
+tmp_mag <- tmp_mag %>% dplyr::select(-contains(c("WAM_", "WAR_")))
+```
+
+OK, now we can merge these two tables and view the data. We will omit the coverage statistics for now so we can focus on the MAG details.  
+
+<small>`r caption_tab("MAG_TAXONOMY_and_COMPLETENESS")`</small>
+
+```{r, eval=TRUE, layout="l-page", echo=FALSE}
+seq_table <- tmp_mag
+reactable(seq_table,
+  defaultColDef = colDef(
+    header = function(value) gsub("_", " ", value, fixed = TRUE),
+    #cell = function(value) format(value, nsmall = 0),
+    align = "left", filterable = TRUE, sortable = TRUE, resizable = TRUE,
+    footerStyle = list(fontWeight = "bold")
+    ), 
+  columns = list(
+    `bin name` = colDef(name = "MAG ID", 
+                       sticky = "left", 
+                       style = list(borderRight = "5px solid #eee"),
+                       headerStyle = list(borderRight = "5px solid #eee"), 
+                       align = "left",
+                       minWidth = 150), 
+    `confidence` = colDef(filterable = FALSE),
+    `% completion` = colDef(filterable = FALSE),
+    `% redundancy` = colDef(filterable = FALSE),
+    `num_splits` = colDef(filterable = FALSE),
+    `total length` = colDef(name = "total length", filterable = FALSE, 
+                       style = list(borderRight = "5px solid #eee"),
+                       headerStyle = list(borderRight = "5px solid #eee"))),
+  columnGroups = list(
+    colGroup(name = "Completeness", columns = c("domain", "confidence", 
+                                                "% completion", "% redundancy", 
+                                                "num_splits", "total length"),
+                       headerStyle = list(fontSize = "1em", borderRight = "5px solid #eee")),
+    colGroup(name = "SCG Taxonomy", columns = c("total_scgs", "supporting_scgs", 
+                                                "t_domain", "t_phylum", "t_class", 
+                                                "t_order", "t_family", "t_genus", "t_species"),
+                       headerStyle = list(fontSize = "1em"))
+  ),
+  searchable = TRUE, defaultPageSize = 5, 
+  pageSizeOptions = c(5, 10, nrow(seq_table)), 
+  showPageSizeOptions = TRUE, highlight = TRUE, 
+  bordered = TRUE, striped = TRUE, compact = FALSE, 
+  wrap = FALSE, showSortable = TRUE, fullWidth = TRUE,
+  theme = reactableTheme(style = list(fontSize = "0.8em")))
+rm(seq_table)
+rm(tmp_mag)
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/06_MAG_TAXONOMY_and_COMPLETENESS.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "06_MAG_TAXONOMY_and_COMPLETENESS",
+    output_extension = ".csv",
+    button_label = "csv file of MAG Completeness & Taxonomy",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+Ok, let's review. 
+
+In total, our collection has `r nrow(mag_summary)` MAGs. According to `anvi-estimate-genome-completeness` there were `r length(which(mag_summary$domain == "BACTERIA"))` Bacteria MAGs, `r length(which(mag_summary$domain == "ARCHAEA"))` Archaea MAGs, and `r length(which(mag_summary$domain == "EUKARYA"))` Eukarya MAG. 
+
+The values were a little bit lower according to `anvi-estimate-scg-taxonomy`, specifically `r length(which(mag_summary$t_domain == "Bacteria"))` Bacteria MAGs, `r length(which(mag_summary$t_domain == "Archaea"))` Archaea MAGs, and no Eukarya MAGs.
+
+So why the difference? Well first of all the GTDB does not contain Eukaryotes. Next, take a look at the `total scgs` column from the `anvi-estimate-scg-taxonomy` output (see table above) and notice that `r length(which(mag_summary$total_scgs == 0))` MAGs have the value 0. This indicates that of the `r nrow(gtdb)` SCG used for taxonomic assignment, these MAGs have no hits. 
+
+```{r, echo=FALSE, eval=TRUE}
+tot_mag <- length(which(mag_summary$`% completion` >= 70 & mag_summary$`% redundancy` <= 10))
+```
+
+What else? Well, there are `r tot_mag` MAGs that have completion values > 70% and redundancy values < 10% and `r length(which(mag_summary$total_scgs >= 10))` that have at least 10 total SCG used in taxonomic classification. 
+
+> The last thing to check is whether the domain classification is the same for `anvi-estimate-genome-completeness` and  `anvi-estimate-scg-taxonomy` (where applicable). 
+
+Well we know there are `r nrow(mag_summary)` MAGs total, `r length(which(mag_summary$t_domain == "None"))` of which have no GTDB classification. So, there should be `r nrow(mag_summary) - length(which(mag_summary$t_domain == "None"))` MAGs that have identical domain classification. Let's see (and hope so).
+
+```{r, eval=TRUE}
+tmp_tbl <- mag_summary
+tmp_tbl$t_domain <- toupper(tmp_tbl$t_domain)
+sum(tmp_tbl$domain == tmp_tbl$t_domain)
+```
+
+Booya. 
+
+# SCG Hits across MAGs
+
+Next we can look at the distribution of SCGs from the `Bacteria_71` and `Archaea_76` HMM profiles across the MAGs. For this we first need to generate individual `PROFILE.db`s and `CONTIG.db`s for each MAG in our curate MAG collection. Luckily, anvi'o has us covered. 
+
+```bash
+anvi-split --pan-or-profile-db 06_MERGED/WA/PROFILE.db \
+           --contigs-db 03_CONTIGS/WA-contigs.db  \
+           --collection-name DASTOOL_MAGS  \
+           --output-dir 10_SPLITS/WA/
+```
+
+As part of this program, anvi'o will add a collection called `DEFAULT` and a single bin called `ALL_SPLITS`. This will become important in the next step when we generate an `internal-genomes` file. 
+
+The program we will use to look at the distribution of SCGs across MAGs is `anvi-script-gen-hmm-hits-matrix-across-genomes`. The program needs either an `external-genomes` file or an `internal-genomes` file so it knows where to find the genomes of interest for the analysis. We will use the `internal-genomes` file, which is a five-column TAB-delimited flat text file. 
+
+The header line must contain these columns: **'name', 'bin_id', 'collection_id', 'profile_db_path', 'contigs_db_path'**. Each line lists a single MAG. As far as I know the `external-genomes` option also works perfectly fine. 
+
+So we generate this file and run the command, first for `Archaea_76`...
+
+```bash
+anvi-script-gen-hmm-hits-matrix-across-genomes \
+                 --internal-genomes internal-genomes.txt \
+                 --hmm-source Archaea_76 \
+                 --output-file 07_WA-Archaea_76-across-MAGs.txt
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/07_WA-Archaea_76-across-MAGs.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "07_WA-Archaea_76-across-MAGs",
+    output_extension = ".csv",
+    button_label = "csv file of Archaea_76 SCG across MAGs",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+
+...and then for `Bacteria_71`. 
+
+```bash
+anvi-script-gen-hmm-hits-matrix-across-genomes \
+                 --internal-genomes internal-genomes.txt \
+                 --hmm-source Bacteria_71 \
+                 --output-file 07_WA-Bacteria_71-across-MAGs.txt
+```
+
+```{r, echo=FALSE, eval=TRUE, layout="l-body"}
+tmp_download <- read_delim("files/07_WA-Bacteria_71-across-MAGs.txt", delim = "\t")
+download_this(tmp_download,
+    output_name = "07_WA-Bacteria_71-across-MAGs",
+    output_extension = ".csv",
+    button_label = "csv file of Bacteria_71 SCG across MAGs",
+    button_type = "default",
+    csv2 = FALSE,
+    has_icon = TRUE,
+    icon = "fa fa-save")
+```
+
+
+Sweet, now for both HMM profiles, we can look at **a**) the number of MAGs represented by each SCG and **b**) the number of unique SCG present in each MAG. Of course keep in mind that we ran both HMM profiles across all MAGs, *regardless of their domain classification*. So what this means for example is that we expect an Archaea MAG to have fewer hits when run against `Bacteria_71` than against `Archaea_76`. 
+
+```{r, eval=TRUE, echo=FALSE}
+####### ####### ####### ####### 
+## Bacteria_71
+####### ####### ####### ####### 
+bact71 <- read_delim("files/07_WA-Bacteria_71-across-MAGs.txt", delim = "\t")
+t_bact71 <- data.table::transpose(bact71, keep.names = "SCG", make.names = "genome_or_bin")
+
+## Sum number of MAGs represented by each SCG
+tmp_sum <- data.frame(sapply(bact71, function(x) sum(x > 0)))
+tmp_sum <- tmp_sum %>% tibble::rownames_to_column("SCG")
+tmp_sum <- tmp_sum[-1,]
+
+tmp_tbl <- dplyr::full_join(tmp_sum, t_bact71, by = c("SCG" = "SCG"))
+tmp_tbl <- tmp_tbl %>% dplyr::rename("total_mags" = 2)
+
+bact71_by_scg <- tmp_tbl
+rm(tmp_sum, tmp_tbl)
+
+## Sum number of unique SCG present in each MAG
+
+tmp_tbl <- mag_summary
+tmp_tbl[, c(3:ncol(tmp_tbl))] <- NULL
+tmp_tbl <- dplyr::full_join(tmp_tbl, bact71, by = c("bin name" = "genome_or_bin"))
+tmp_sum <- data.frame(sapply(t_bact71, function(x) sum(x > 0)))
+tmp_sum <- tmp_sum %>% tibble::rownames_to_column("MAG")
+tmp_sum <- tmp_sum[-1,]
+tmp_sum <- tmp_sum %>% dplyr::rename("unique_scgs" = 2)
+
+tmp_tbl <- dplyr::full_join(tmp_tbl, tmp_sum , by = c("bin name" = "MAG"))
+tmp_tbl <- tmp_tbl %>% dplyr::relocate("unique_scgs", .after = "domain")
+bact71_by_mag <- tmp_tbl
+rm(tmp_sum)
+rm(tmp_tbl)
+
+####### ####### ####### ####### 
+## Archaea_76
+####### ####### ####### ####### 
+arch76 <- read_delim("files/07_WA-Archaea_76-across-MAGs.txt", delim = "\t")
+t_arch76 <- data.table::transpose(arch76, keep.names = "SCG", make.names = "genome_or_bin")
+
+## Sum number of MAGs represented by each SCG
+tmp_sum <- data.frame(sapply(arch76, function(x) sum(x > 0)))
+tmp_sum <- tmp_sum %>% tibble::rownames_to_column("SCG")
+tmp_sum <- tmp_sum[-1,]
+
+tmp_tbl <- dplyr::full_join(tmp_sum, t_arch76, by = c("SCG" = "SCG"))
+tmp_tbl <- tmp_tbl %>% dplyr::rename("total_mags" = 2)
+
+arch76_by_scg <- tmp_tbl
+rm(tmp_sum, tmp_tbl)
+
+## Sum number of unique SCG present in each MAG
+
+tmp_tbl <- mag_summary
+tmp_tbl[, c(3:ncol(tmp_tbl))] <- NULL
+tmp_tbl <- dplyr::full_join(tmp_tbl, arch76, by = c("bin name" = "genome_or_bin"))
+tmp_sum <- data.frame(sapply(t_arch76, function(x) sum(x > 0)))
+tmp_sum <- tmp_sum %>% tibble::rownames_to_column("MAG")
+tmp_sum <- tmp_sum[-1,]
+tmp_sum <- tmp_sum %>% dplyr::rename("unique_scgs" = 2)
+
+tmp_tbl <- dplyr::full_join(tmp_tbl, tmp_sum , by = c("bin name" = "MAG"))
+tmp_tbl <- tmp_tbl %>% dplyr::relocate("unique_scgs", .after = "domain")
+arch76_by_mag <- tmp_tbl
+rm(tmp_sum)
+rm(tmp_tbl)
+```
+
+</br>
+
+##  Summary of Bacteria 71 SCG
+
+::: l-body
+::: {.panelset}
+::: {.panel}
+
+#### By SCG
+
+<small>`r caption_tab("bacteria_71_by_scg")`</small>
+
+```{r, eval=TRUE, layout="l-body", echo=FALSE}
+seq_table <- bact71_by_scg[, 1:2]
+reactable(seq_table,
+  defaultColDef = colDef(
+    header = function(value) gsub("_", " ", value, fixed = TRUE),
+    cell = function(value) format(value, nsmall = 0),
+    align = "left", filterable = FALSE, sortable = TRUE, resizable = TRUE,
+    footerStyle = list(fontWeight = "bold")
+    ), 
+  columns = list(
+    SCG = colDef(name = "SCG", 
+                       sticky = "left", 
+                       style = list(borderRight = "1px solid #eee"),
+                       headerStyle = list(borderRight = "1px solid #eee"), 
+                       align = "left",
+                       minWidth = 100, filterable = TRUE)
+    ), 
+  searchable = FALSE, defaultPageSize = 5, 
+  pageSizeOptions = c(5, 10, nrow(seq_table)), 
+  showPageSizeOptions = TRUE, highlight = TRUE, 
+  bordered = TRUE, striped = TRUE, compact = FALSE, 
+  wrap = FALSE, showSortable = FALSE, fullWidth = TRUE,
+  theme = reactableTheme(style = list(fontSize = "0.8em")))
+rm(seq_table)
+```
+:::
+
+::: {.panel}
+
+#### By MAG
+
+<small>`r caption_tab("bacteria_71_by_mag")`</small>
+
+
+```{r, eval=TRUE, layout="l-body", echo=FALSE}
+seq_table <- bact71_by_mag[, 1:3]
+#seq_table <- dplyr::filter(seq_table, domain == "BACTERIA")
+reactable(seq_table,
+  defaultColDef = colDef(
+    header = function(value) gsub("_", " ", value, fixed = TRUE),
+    cell = function(value) format(value, nsmall = 0),
+    align = "left", filterable = FALSE, sortable = TRUE, resizable = TRUE,
+    footerStyle = list(fontWeight = "bold")
+    ), 
+  columns = list(
+    `bin name` = colDef(name = "MAG", 
+                       sticky = "left", 
+                       style = list(borderRight = "1px solid #eee"),
+                       headerStyle = list(borderRight = "1px solid #eee"), 
+                       align = "left",
+                       minWidth = 100, filterable = TRUE),
+    domain = colDef(filterable = TRUE)
+    ), 
+  searchable = FALSE, defaultPageSize = 5, 
+  pageSizeOptions = c(5, 10, nrow(seq_table)), 
+  showPageSizeOptions = TRUE, highlight = TRUE, 
+  bordered = TRUE, striped = TRUE, compact = FALSE, 
+  wrap = FALSE, showSortable = FALSE, fullWidth = TRUE,
+  theme = reactableTheme(style = list(fontSize = "0.8em")))
+rm(seq_table)
+```
+:::
+:::
+:::
+
+## Summary of Archaea 76 SCGs
+
+::: l-body
+::: {.panelset}
+::: {.panel}
+
+#### By SCG 
+
+<small>`r caption_tab("archaea_76_by_scg")`</small>
+
+```{r, eval=TRUE, layout="l-body", echo=FALSE}
+seq_table <- arch76_by_scg[, 1:2]
+reactable(seq_table,
+  defaultColDef = colDef(
+    header = function(value) gsub("_", " ", value, fixed = TRUE),
+    cell = function(value) format(value, nsmall = 0),
+    align = "left", filterable = FALSE, sortable = TRUE, resizable = TRUE,
+    footerStyle = list(fontWeight = "bold")
+    ), 
+  columns = list(
+    SCG = colDef(name = "SCG", 
+                       sticky = "left", 
+                       style = list(borderRight = "1px solid #eee"),
+                       headerStyle = list(borderRight = "1px solid #eee"), 
+                       align = "left",
+                       minWidth = 100, filterable = TRUE)
+    ), 
+  searchable = FALSE, defaultPageSize = 5, 
+  pageSizeOptions = c(5, 10, nrow(seq_table)), 
+  showPageSizeOptions = TRUE, highlight = TRUE, 
+  bordered = TRUE, striped = TRUE, compact = FALSE, 
+  wrap = FALSE, showSortable = FALSE, fullWidth = TRUE,
+  theme = reactableTheme(style = list(fontSize = "0.8em")))
+rm(seq_table)
+```
+
+:::
+
+::: {.panel}
+
+#### By MAG 
+
+<small>`r caption_tab("archaea_76_by_scg")`</small>
+
+
+```{r, eval=TRUE, layout="l-body", echo=FALSE}
+seq_table <- arch76_by_mag[, 1:3]
+#seq_table <- dplyr::filter(seq_table, domain == "ARCHAEA")
+reactable(seq_table,
+  defaultColDef = colDef(
+    header = function(value) gsub("_", " ", value, fixed = TRUE),
+    cell = function(value) format(value, nsmall = 0),
+    align = "left", filterable = FALSE, sortable = TRUE, resizable = TRUE,
+    footerStyle = list(fontWeight = "bold")
+    ), 
+  columns = list(
+    `bin name` = colDef(name = "MAG", 
+                       sticky = "left", 
+                       style = list(borderRight = "1px solid #eee"),
+                       headerStyle = list(borderRight = "1px solid #eee"), 
+                       align = "left",
+                       minWidth = 100, filterable = TRUE),
+    domain = colDef(filterable = TRUE)
+    ), 
+  searchable = FALSE, defaultPageSize = 5, 
+  pageSizeOptions = c(5, 10, nrow(seq_table)), 
+  showPageSizeOptions = TRUE, highlight = TRUE, 
+  bordered = TRUE, striped = TRUE, compact = FALSE, 
+  wrap = FALSE, showSortable = FALSE, fullWidth = TRUE,
+  theme = reactableTheme(style = list(fontSize = "0.8em")))
+rm(seq_table)
+```
+:::
+:::
+:::
+
+# SCG Coverage across MAGs
+
+In the section above we used `anvi-split` to generate `PROFILE.db`s and `CONTIG.db`s for each MAG. We will now query these databases to access gene hits to the Archaea_76 and Bacteria_71 HMM profiles. 
+
+```bash
+for mag in `cat 00_WA-MAGS.txt`
+do anvi-script-get-hmm-hits-per-gene-call \
+                       --contigs-db 10_SPLITS/WA/$mag/CONTIGS.db \
+                       --hmm-source Archaea_76 \
+                       --output-file Archaea_76/09_HMM_HITS_PER_GENE_CALLS/$mag-Archaea_76.txt
+
+do anvi-script-get-hmm-hits-per-gene-call \
+                       --contigs-db 10_SPLITS/WA/$mag/CONTIGS.db \
+                       --hmm-source Bacteria_71 \
+                       --output-file Bacteria_71/09_HMM_HITS_PER_GENE_CALLS/$mag-Bacteria_71.txt
+done
+```
+
+These commands will each generate a 5-column text file for every MAG containing the following information:
+
+- `unique_entry_id` I honestly don't know what this is but we do not need this info here (FIX). 
+
+- `gene_callers_id` The unique gene caller ID recognized by anvi’o.
+
+- `source` The name of the functional annotation source, in other words the database that the function came from. In this case, either Arachea_76 or Bacteria_71.
+
+- `gene_name` The name of the SCG. 
+
+- `gene_hmm_id` The Pfam gene ID.
+
+```{r, eval=TRUE}
+tmp_hits <- read_delim("files/Bacteria_71/09_HMM_HITS_PER_GENE_CALLS/WA_MAG_00001-Bacteria_71.txt", delim = "\t")
+head(tmp_hits)
+```
+
+What we need to do is parse out the `gene_callers_id` column and remove the header. A simple `bash` one-liner should do the trick. We will use the file `00_WA-MAGS.txt`--which is a single column file containing the names of each MAG--to loop through each output file and generate gene ID files. 
+
+```bash
+for mag in `cat 00_WA-MAGS.txt`
+
+do awk '{print $2}' files/Archaea_76/09_HMM_HITS_PER_GENE_CALLS/$mag-Archaea_76.txt | sed 1d > Archaea_76/10_GENE_CALLER_IDS/$mag-Archaea_76-gene_ids.txt
+
+do awk '{print $2}' files/Bacteria_71/09_HMM_HITS_PER_GENE_CALLS/$mag-Bacteria_71.txt | sed 1d > Bacteria_71/10_GENE_CALLER_IDS/$mag-Bacteria_71-gene_ids.txt
+
+done
+```
+
+Excellent. Then we use the `-gene_ids.txt` files in conjunction with `anvi-export-gene-coverage-and-detection` to generate coverage and detection information for each MAG from both HMM profiles. Here we use the list of MAGs (`00_WA-MAGS.txt`) in a `for` loop to produce the files for each MAG.
+
+```bash
+for mag in `cat 00_WA-MAGS.txt`
+do anvi-export-gene-coverage-and-detection \
+                    --profile-db $mag/PROFILE.db \
+                    --contigs-db $mag/CONTIGS.db \
+                    --genes-of-interest $mag-Archaea_76-gene_ids.txt \
+                    --output-file-prefix $mag-Archaea_76
+
+do anvi-export-gene-coverage-and-detection \
+                    --profile-db $mag/PROFILE.db \
+                    --contigs-db $mag/CONTIGS.db \
+                    --genes-of-interest $mag-Bacteria_71-gene_ids.txt \
+                    --output-file-prefix $mag-Bacteria_71
+
+done
+```
+
+It is worth noting that the same data can be generated by adding the `-init-gene-coverages` flag to `anvi-summarize` on the collection of MAGs. This will generate coverage stats for all genes in a MAG. At that point you would need to parse out the genes of interest from the output files. Story for another time. 
+
+Finally, we can generate files for each MAG that contains the **a**) gene callers ID's (these are unique),	**b**) HMM source (`Archaea_76` or `Bacteria_71`),	**c**) gene name,	**d**) Pfam gene ID, and **e**) coverage or detection across samples.
+
+First for `Archaea_76`. 
+
+```{r, eval=FALSE, code_folding=TRUE}
+wa_mags <- read_delim("files/00_WA-MAGS.txt", delim = "\t", col_names = FALSE)
+wa_mags <- wa_mags$X1
+for (mag in wa_mags) {
+  cat("Reading", mag, "gene list")
+  tmp_gene_id <- read_delim(paste("files/Archaea_76/09_HMM_HITS_PER_GENE_CALLS/", 
+                                  mag, "-Archaea_76.txt", sep = ""), 
+                            delim = "\t", col_names = TRUE)
+  tmp_gene_id[,1] <- NULL
+  cat("Reading", mag, "coverage")
+  tmp_coverage <- read_delim(paste("files/Archaea_76/11_COVERAGE_RAW/", 
+                                   mag, "-Archaea_76-GENE-COVERAGES.txt", sep = ""), 
+                             delim = "\t", col_names = TRUE)
+  cat("Reading", mag, "detection")
+  tmp_detection <- read_delim(paste("files/Archaea_76/11_DETECTION_RAW/", 
+                                    mag, "-Archaea_76-GENE-DETECTION.txt", sep = ""), 
+                              delim = "\t", col_names = TRUE)
+  cat("MAG", mag, "gene file has ", nrow(tmp_gene_id), "entries", "\n")
+  cat("MAG", mag, "coverage file has ", nrow(tmp_coverage), "entries", "\n")
+  cat("MAG", mag, "detection file has ", nrow(tmp_detection), "entries", "\n")
+  cat("Joining", mag, "gene ID and coverage files")
+  tmp_coverage_join <- dplyr::full_join(tmp_gene_id, tmp_coverage, by = c("gene_callers_id" = "key"))
+  cat("Joining", mag, "gene ID and detection files")
+  tmp_detection_join <- dplyr::full_join(tmp_gene_id, tmp_detection, by = c("gene_callers_id" = "key"))
+  tmp_coverage_name <- purrr::map_chr(mag, ~ paste0(., "_Archaea_76-coverage.txt"))
+  tmp_detection_name <- purrr::map_chr(mag, ~ paste0(., "_Archaea_76-detection.txt"))  
+  
+  write.table(tmp_coverage_join, paste("files/Archaea_76/12_COVERAGE/", tmp_coverage_name, sep = ""), 
+              col.names  = TRUE, row.names = FALSE, sep = "\t", quote = FALSE)
+  
+  write.table(tmp_detection_join, paste("files/Archaea_76/12_DETECTION/", tmp_detection_name, sep = ""), 
+              col.names  = TRUE, row.names = FALSE, sep = "\t", quote = FALSE)
+  
+  #assign(tmp_coverage_name, tmp_coverage_join)
+  #assign(tmp_detection_name, tmp_detection_join)
+  
+  rm(list = ls(pattern = "tmp_"))
+}
+```
+
+And then for `Bacteria_71`.
+
+```{r, eval=FALSE, code_folding=TRUE}
+wa_mags <- read_delim("files/00_WA-MAGS.txt", delim = "\t", col_names = FALSE)
+wa_mags <- wa_mags$X1
+for (mag in wa_mags) {
+  cat("Reading", mag, "gene list")
+  tmp_gene_id <- read_delim(paste("files/Bacteria_71/09_HMM_HITS_PER_GENE_CALLS/", 
+                                  mag, "-Bacteria_71.txt", sep = ""), 
+                            delim = "\t", col_names = TRUE)
+  tmp_gene_id[,1] <- NULL
+  cat("Reading", mag, "coverage")
+  tmp_coverage <- read_delim(paste("files/Bacteria_71/11_COVERAGE_RAW/", 
+                                   mag, "-Bacteria_71-GENE-COVERAGES.txt", sep = ""), 
+                             delim = "\t", col_names = TRUE)
+  cat("Reading", mag, "detection")
+  tmp_detection <- read_delim(paste("files/Bacteria_71/11_DETECTION_RAW/", 
+                                    mag, "-Bacteria_71-GENE-DETECTION.txt", sep = ""), 
+                              delim = "\t", col_names = TRUE)
+  cat("MAG", mag, "gene file has ", nrow(tmp_gene_id), "entries", "\n")
+  cat("MAG", mag, "coverage file has ", nrow(tmp_coverage), "entries", "\n")
+  cat("MAG", mag, "detection file has ", nrow(tmp_detection), "entries", "\n")
+  cat("Joining", mag, "gene ID and coverage files")
+  tmp_coverage_join <- dplyr::full_join(tmp_gene_id, tmp_coverage, by = c("gene_callers_id" = "key"))
+  cat("Joining", mag, "gene ID and detection files")
+  tmp_detection_join <- dplyr::full_join(tmp_gene_id, tmp_detection, by = c("gene_callers_id" = "key"))
+  tmp_coverage_name <- purrr::map_chr(mag, ~ paste0(., "_Bacteria_71-coverage.txt"))
+  tmp_detection_name <- purrr::map_chr(mag, ~ paste0(., "_Bacteria_71-detection.txt"))  
+  
+  write.table(tmp_coverage_join, paste("files/Bacteria_71/12_COVERAGE/", tmp_coverage_name, sep = ""), 
+              col.names  = TRUE, row.names = FALSE, sep = "\t", quote = FALSE)
+  
+  write.table(tmp_detection_join, paste("files/Bacteria_71/12_DETECTION/", tmp_detection_name, sep = ""), 
+              col.names  = TRUE, row.names = FALSE, sep = "\t", quote = FALSE)
+  
+  #assign(tmp_coverage_name, tmp_coverage_join)
+  #assign(tmp_detection_name, tmp_detection_join)
+  
+  rm(list = ls(pattern = "tmp_"))
+}
+```
+
+
+```{r, echo=FALSE}
+save.image("page_build/index.rdata")
+```
+
+
+That's all for now. See you soon. 
+
+
+
+
 

@@ -34,6 +34,10 @@ d-article h3 {
   font-family: 'Work Sans', 'Source Sans Pro', 'PT Sans';
 }
 
+d-article a {
+  color: #004276;
+}
+
 d-byline .authors-affiliations {
   grid-column-end: span 3;
   grid-column-gap: 8px;
@@ -249,13 +253,20 @@ details[open] summary::after {
 /********************************/
 
 button.btn.btn-default {
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: "PT Sans";
-  border-color: #29B222;
+  border-color: #808080;
   border-width: medium;
   margin-bottom: 15px;
 }
 
+button.btn.btn-success {
+  font-size: 1.2em;
+  font-family: "PT Sans";
+  border-color: #d55e00;
+  border-width: medium;
+  margin-bottom: 15px;
+}
 /********************************/
 /* controls reactable  */
 /********************************/

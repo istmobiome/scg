@@ -1,11 +1,11 @@
-title: "agua_salud"
+title: "SCG"
 base_url: https://istmobiome.github.io/
 repository_url: https://github.com/istmobiome/scg/
 description: |
   SCG analysis of WA MAGs
 output_dir: "public_build"
 creative_commons: CC BY
-exclude: ["public", "README.html", "README.md", "page_build", "files", "public_build"]
+exclude: ["public", "README.html", "README.md", "page_build", "public_build", "files/Archaea_76", "files/Bacteria_71"]
 navbar:
   icon: icon.png
   title: ""
