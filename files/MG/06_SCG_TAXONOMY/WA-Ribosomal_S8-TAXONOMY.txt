@@ -1,0 +1,279 @@
+scg_name	percent_identity	t_domain	t_phylum	t_class	t_order	t_family	t_genus	t_species
+WA_Ribosomal_S8_1648645	98.4	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	TMED112	TMED112	TMED112 sp902535365
+WA_Ribosomal_S8_1576965	97.7	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp000299095
+WA_Ribosomal_S8_272903	96.9	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Halieaceae	Luminiphilus	Luminiphilus sp011524755
+WA_Ribosomal_S8_1667083	100.0	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-O3	MGIIb-O3 sp001628485
+WA_Ribosomal_S8_713740	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	SCGC-AAA076-P13	SCGC-AAA076-P13 sp010024215
+WA_Ribosomal_S8_1507851	100.0	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	None	None
+WA_Ribosomal_S8_565774	96.9	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	RCC307	RCC307 sp012270465
+WA_Ribosomal_S8_398863	92.4	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-K1	MGIIa-K1 sp002498185
+WA_Ribosomal_S8_946192	98.4	Bacteria	Actinobacteriota	Acidimicrobiia	Actinomarinales	Actinomarinaceae	Actinomarina	None
+WA_Ribosomal_S8_1221646	93.0	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	AAA536-G10	AAA536-G10	AAA536-G10 sp002691185
+WA_Ribosomal_S8_1264146	100.0	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	AAA536-G10	TMED54	None
+WA_Ribosomal_S8_783891	96.1	Bacteria	SAR324	SAR324	SAR324	NAC60-12	JCVI-SCAAA005	JCVI-SCAAA005 sp011522845
+WA_Ribosomal_S8_1388564	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	LFER01	LFER01 sp011525185
+WA_Ribosomal_S8_870928	93.8	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902609855
+WA_Ribosomal_S8_140311	94.6	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	BACL11	GCA-002715885	GCA-002715885 sp902579065
+WA_Ribosomal_S8_916504	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	UBA5951	None
+WA_Ribosomal_S8_1263608	100.0	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_1466906	96.2	Bacteria	Actinobacteriota	Acidimicrobiia	Acidimicrobiales	MedAcidi-G1	MedAcidi-G2B	MedAcidi-G2B sp003215175
+WA_Ribosomal_S8_1363480	96.2	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	SAR86A	SAR86A sp902579825
+WA_Ribosomal_S8_1672732	97.6	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	TMED112	TMED112	TMED112 sp003331605
+WA_Ribosomal_S8_954397	95.3	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA974	None
+WA_Ribosomal_S8_612383	94.5	Bacteria	Marinisomatota	Marinisomatia	Marinisomatales	TCS55	TMED108	TMED108 sp002702225
+WA_Ribosomal_S8_1604130	96.9	Bacteria	Actinobacteriota	Acidimicrobiia	Acidimicrobiales	UBA11606	UBA11606	UBA11606 sp002694825
+WA_Ribosomal_S8_279586	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	AAA536-G10	TMED54	None
+WA_Ribosomal_S8_243236	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	AAA536-G10	TMED54	TMED54 sp902615025
+WA_Ribosomal_S8_1033115	97.3	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_953895	95.3	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	HIMB100	None
+WA_Ribosomal_S8_501799	96.1	Bacteria	Bacteroidota	Rhodothermia	Balneolales	Balneolaceae	UBA1275	None
+WA_Ribosomal_S8_1635369	93.0	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	HTCC2089	UBA9926	UBA9926 sp002728935
+WA_Ribosomal_S8_694315	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	GCA-002684695	GCA-002684695	GCA-002684695 sp902612965
+WA_Ribosomal_S8_1404974	97.1	Bacteria	Actinobacteriota	Acidimicrobiia	Actinomarinales	Actinomarinaceae	Actinomarina	None
+WA_Ribosomal_S8_979504	97.9	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902609855
+WA_Ribosomal_S8_1233458	95.3	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA3478	None
+WA_Ribosomal_S8_720440	97.3	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_851000	90.8	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-N1	MGIIb-N1 sp002507175
+WA_Ribosomal_S8_881724	97.7	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA724	UBA724 sp002723075
+WA_Ribosomal_S8_1445437	100.0	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_266302	97.6	Bacteria	Proteobacteria	Alphaproteobacteria	HIMB59	HIMB59	HIMB59	HIMB59 sp000299115
+WA_Ribosomal_S8_812096	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	UBA3439	None
+WA_Ribosomal_S8_386124	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	LFER01	LFER01 sp001510135
+WA_Ribosomal_S8_1123404	92.4	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Halieaceae	Luminiphilus	Luminiphilus sp002456975
+WA_Ribosomal_S8_511566	100.0	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-O3	MGIIb-O3 sp001628485
+WA_Ribosomal_S8_1387600	97.7	Bacteria	Planctomycetota	UBA1135	UBA1135	GCA-002686595	GCA-2686945	GCA-2686945 sp011524785
+WA_Ribosomal_S8_657489	93.8	Bacteria	Proteobacteria	Gammaproteobacteria	Methylococcales	Cycloclasticaceae	Cycloclasticus	Cycloclasticus sp002700385
+WA_Ribosomal_S8_359508	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_591957	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp003284275
+WA_Ribosomal_S8_101460	95.3	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	TMED25	TMED25	TMED25 sp002704755
+WA_Ribosomal_S8_1559449	100.0	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Schleiferiaceae	UBA10364	UBA10364 sp002378005
+WA_Ribosomal_S8_565339	94.6	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	TMED25	TMED25	TMED25 sp002704755
+WA_Ribosomal_S8_1172572	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	AAA536-G10	TMED54	TMED54 sp902615025
+WA_Ribosomal_S8_911453	95.9	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_911454	100.0	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	Synechococcus sp014279795
+WA_Ribosomal_S8_40029	96.9	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_1201243	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	AU392	AU392 sp003443635
+WA_Ribosomal_S8_116834	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Bin95	Bin95	VMCJ01	VMCJ01 sp008081395
+WA_Ribosomal_S8_272996	94.5	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	UBA7377	None
+WA_Ribosomal_S8_911974	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	CACEJU01	CACEJU01 sp902559885
+WA_Ribosomal_S8_1421416	94.6	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA724	UBA724 sp902536935
+WA_Ribosomal_S8_1683051	90.1	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Opitutales	MB11C04	MB11C04	MB11C04 sp002692535
+WA_Ribosomal_S8_210033	93.8	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	BACL21	None
+WA_Ribosomal_S8_1083508	97.6	Bacteria	Proteobacteria	Gammaproteobacteria	PS1	Thioglobaceae	VMDI01	VMDI01 sp008080915
+WA_Ribosomal_S8_40565	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902609855
+WA_Ribosomal_S8_550006	94.6	Bacteria	Proteobacteria	Alphaproteobacteria	TMED127	TMED127	MED-G10	MED-G10 sp002457065
+WA_Ribosomal_S8_1646196	92.4	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-O1	MGIIb-O1 sp002502175
+WA_Ribosomal_S8_1310840	90.8	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-N1	MGIIb-N1 sp011523055
+WA_Ribosomal_S8_927865	95.3	Bacteria	Marinisomatota	Marinisomatia	Marinisomatales	UBA1611	TMED80	TMED80 sp002170405
+WA_Ribosomal_S8_1180793	93.1	Bacteria	Proteobacteria	Alphaproteobacteria	Thalassobaculales	Nisaeaceae	GCA-002701455	None
+WA_Ribosomal_S8_440958	93.0	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L2	MGIIa-L2 sp002706065
+WA_Ribosomal_S8_1384574	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Schleiferiaceae	UBA10364	UBA10364 sp002378005
+WA_Ribosomal_S8_1261696	95.4	Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	UBA8649	UBA8649	None
+WA_Ribosomal_S8_1674890	96.9	Bacteria	Proteobacteria	Gammaproteobacteria	UBA11654	UBA11654	UBA11654	UBA11654 sp001629325
+WA_Ribosomal_S8_1184909	97.7	Bacteria	SAR324	SAR324	SAR324	NAC60-12	UBA1014	UBA1014 sp001469005
+WA_Ribosomal_S8_1606798	92.2	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-O3	MGIIb-O3 sp902625325
+WA_Ribosomal_S8_1457296	93.8	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA11663	UBA11663 sp002863145
+WA_Ribosomal_S8_788625	93.0	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L1	MGIIa-L1 sp9354u
+WA_Ribosomal_S8_284305	96.1	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UBA10066	GCA-002727735	None
+WA_Ribosomal_S8_752787	97.7	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_1123477	98.7	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	MED-G14	MED-G14 sp902544085
+WA_Ribosomal_S8_776342	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA7428	UBA7428 sp011526275
+WA_Ribosomal_S8_468632	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA8752	UBA8752 sp002862785
+WA_Ribosomal_S8_1114779	94.7	Bacteria	Proteobacteria	Alphaproteobacteria	UBA6615	UBA6615	UBA8079	UBA8079 sp002724635
+WA_Ribosomal_S8_1309339	92.4	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L4	MGIIa-L4 sp002718195
+WA_Ribosomal_S8_171164	97.6	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Methylophilaceae	BACL14	None
+WA_Ribosomal_S8_450720	90.8	Archaea	None	None	None	None	None	None
+WA_Ribosomal_S8_791207	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	TMED96	None
+WA_Ribosomal_S8_1281192	96.9	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Vulcanococcus	None
+WA_Ribosomal_S8_1455785	94.6	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	Poseidonia	Poseidonia sp011524855
+WA_Ribosomal_S8_154281	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	AG-422-B15	AG-422-B15	None
+WA_Ribosomal_S8_1050284	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	HIMB100	None
+WA_Ribosomal_S8_1687728	93.8	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	CACIJG01	None
+WA_Ribosomal_S8_241331	94.5	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	CACNRH01	CACNRH01 sp902584365
+WA_Ribosomal_S8_1015477	95.3	Bacteria	SAR324	SAR324	SAR324	NAC60-12	UBA1014	UBA1014 sp001469005
+WA_Ribosomal_S8_1643192	93.8	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_735932	96.9	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_1245888	95.3	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902565935
+WA_Ribosomal_S8_941763	96.9	Bacteria	Proteobacteria	Gammaproteobacteria	GCA-002705445	GCA-002705445	GCA-2702235	GCA-2702235 sp002702235
+WA_Ribosomal_S8_114372	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Halieaceae	Luminiphilus	Luminiphilus sp011524755
+WA_Ribosomal_S8_875717	92.2	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-O3	MGIIb-O3 sp902625325
+WA_Ribosomal_S8_1234120	90.8	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-O1	None
+WA_Ribosomal_S8_1706184	100.0	Bacteria	Proteobacteria	Alphaproteobacteria	HIMB59	HIMB59	HIMB59	HIMB59 sp902522585
+WA_Ribosomal_S8_237770	90.1	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-O1	None
+WA_Ribosomal_S8_731339	97.7	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	MED-G14	MED-G14 sp902554655
+WA_Ribosomal_S8_1659082	100.0	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA11663	None
+WA_Ribosomal_S8_653002	97.7	Bacteria	Planctomycetota	Planctomycetes	Pirellulales	Pirellulaceae	Rubripirellula	Rubripirellula sp012270385
+WA_Ribosomal_S8_1665230	97.7	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902546145
+WA_Ribosomal_S8_548560	95.3	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	HIMB114	HIMB114 sp000163555
+WA_Ribosomal_S8_233681	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	MED-G52	None
+WA_Ribosomal_S8_1746130	96.9	Bacteria	Actinobacteriota	Acidimicrobiia	Acidimicrobiales	UBA8592	MedAcidi-G2A	MedAcidi-G2A sp002380145
+WA_Ribosomal_S8_1680595	98.4	Bacteria	Planctomycetota	Planctomycetes	Pirellulales	UBA1268	UBA1268	UBA1268 sp002694955
+WA_Ribosomal_S8_243413	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA724	UBA724 sp902586905
+WA_Ribosomal_S8_746711	97.7	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Marinoscillaceae	MED-G16	MED-G16 sp002701745
+WA_Ribosomal_S8_1242841	93.0	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902631595
+WA_Ribosomal_S8_755420	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudohongiellaceae	UBA9145	None
+WA_Ribosomal_S8_897757	97.7	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_1549020	93.8	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_1311455	94.5	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Nitrincolaceae	Marinobacterium	Marinobacterium sp013373575
+WA_Ribosomal_S8_1089248	98.7	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	MED-G13	MED-G13 sp902604715
+WA_Ribosomal_S8_208610	96.2	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	CACEJU01	CACEJU01 sp902559885
+WA_Ribosomal_S8_1625827	95.2	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	MED-G13	None
+WA_Ribosomal_S8_325858	94.6	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	UBA8309	None
+WA_Ribosomal_S8_461542	93.1	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA8316	UBA8316 sp009936675
+WA_Ribosomal_S8_240871	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	UBA8309	UBA8309 sp009920665
+WA_Ribosomal_S8_776424	95.7	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L2	None
+WA_Ribosomal_S8_1690343	94.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA11663	UBA11663 sp002863145
+WA_Ribosomal_S8_801514	98.4	Bacteria	Actinobacteriota	Actinomycetia	Nanopelagicales	S36-B12	S36-B12	None
+WA_Ribosomal_S8_49899	92.9	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Alteromonadaceae	Marisediminitalea	Marisediminitalea aggregata
+WA_Ribosomal_S8_371436	97.7	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	RCC307	RCC307 sp012270465
+WA_Ribosomal_S8_1370854	94.3	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	UBA7377	UBA7377 sp902586195
+WA_Ribosomal_S8_1223921	96.2	Bacteria	Proteobacteria	Alphaproteobacteria	TMED127	TMED127	MED-G10	None
+WA_Ribosomal_S8_727285	98.6	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_1126133	98.4	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Pedosphaerales	UBA1100	UBA1100	UBA1100 sp011523245
+WA_Ribosomal_S8_1460986	97.6	Bacteria	Planctomycetota	Phycisphaerae	Phycisphaerales	SM1A02	UBA8653	None
+WA_Ribosomal_S8_302337	98.1	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Vibrionaceae	Vibrio	Vibrio caribbeanicus
+WA_Ribosomal_S8_1364225	97.4	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	SCGC-AAA076-P13	None
+WA_Ribosomal_S8_323841	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	GCA-002722245	GCA-002722245	GCA-002722245 sp002722245
+WA_Ribosomal_S8_687369	96.9	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	CACEJU01	CACEJU01 sp902559885
+WA_Ribosomal_S8_1409803	91.5	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA974	None
+WA_Ribosomal_S8_606988	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	HIMB100	None
+WA_Ribosomal_S8_1126669	93.8	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L1	MGIIa-L1 sp9354u
+WA_Ribosomal_S8_1428750	96.1	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Halieaceae	Luminiphilus	Luminiphilus sp002683395
+WA_Ribosomal_S8_114448	90.0	Bacteria	Actinobacteriota	Acidimicrobiia	Acidimicrobiales	UBA11606	UBA11606	None
+WA_Ribosomal_S8_839444	97.7	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA3478	None
+WA_Ribosomal_S8_1431320	92.4	Archaea	Nanoarchaeota	Nanoarchaeia	UBA10117	ARS21	ARS21	ARS21 sp002725495
+WA_Ribosomal_S8_551192	93.0	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	HTCC2089	UBA9926	UBA9926 sp002728935
+WA_Ribosomal_S8_246040	90.8	Archaea	Asgardarchaeota	Heimdallarchaeia	LC-2	LC-2	GCA-2728275	GCA-2728275 sp002728275
+WA_Ribosomal_S8_867098	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA3478	None
+WA_Ribosomal_S8_1121564	94.6	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA11663	UBA11663 sp002863145
+WA_Ribosomal_S8_1008415	95.3	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	MED-G13	MED-G13 sp902602415
+WA_Ribosomal_S8_132896	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	HIMB59	GCA-002718135	AG-337-I02	AG-337-I02 sp902538155
+WA_Ribosomal_S8_228129	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	SCGC-AAA076-P13	None
+WA_Ribosomal_S8_205090	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	TMED127	TMED127	TMED13	TMED13 sp902595755
+WA_Ribosomal_S8_2339	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	UBA8309	None
+WA_Ribosomal_S8_1118499	96.1	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	RCC307	RCC307 sp002168155
+WA_Ribosomal_S8_1726247	96.1	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	RFYP01	RFYP01 sp011526365
+WA_Ribosomal_S8_343335	97.7	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_148265	96.1	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UBA7312	UBA7312	UBA7312 sp002715345
+WA_Ribosomal_S8_430890	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	MED-G52	None
+WA_Ribosomal_S8_889136	93.8	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L1	MGIIa-L1 sp9354u
+WA_Ribosomal_S8_404788	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Litoricolaceae	Litoricola	Litoricola sp012269655
+WA_Ribosomal_S8_1274677	98.4	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Nitrincolaceae	Marinobacterium	Marinobacterium sp013283365
+WA_Ribosomal_S8_1711925	91.5	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	BACL11	GCA-2716345	GCA-2716345 sp902597195
+WA_Ribosomal_S8_235320	100.0	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_598841	97.1	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UBA10066	GCA-002727735	GCA-002727735 sp002727735
+WA_Ribosomal_S8_1193272	92.2	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudohongiellaceae	OM182	None
+WA_Ribosomal_S8_1319229	93.8	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Marinoscillaceae	MED-G16	MED-G16 sp002701745
+WA_Ribosomal_S8_314687	96.6	Bacteria	Proteobacteria	Alphaproteobacteria	HIMB59	HIMB59	HIMB59	HIMB59 sp000299115
+WA_Ribosomal_S8_1125696	95.3	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	Synechococcus sp000153825
+WA_Ribosomal_S8_85313	94.5	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	UBA7377	None
+WA_Ribosomal_S8_574786	92.4	Archaea	None	None	None	None	None	None
+WA_Ribosomal_S8_1338690	90.6	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_870208	97.7	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_956230	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	MED-G52	MED-G52 sp002457055
+WA_Ribosomal_S8_160582	93.0	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_355657	90.7	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	UBA3439	None
+WA_Ribosomal_S8_1450827	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	AG-339-G14	CACNYO01	None
+WA_Ribosomal_S8_1188174	96.1	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Pedosphaerales	AAA164-E04	UBA7971	UBA7971 sp002686885
+WA_Ribosomal_S8_1613135	97.7	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UA16	None
+WA_Ribosomal_S8_131409	97.4	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	CACNXK01	None
+WA_Ribosomal_S8_663379	93.0	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L3	None
+WA_Ribosomal_S8_843097	96.9	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	Synechococcus sp003209155
+WA_Ribosomal_S8_326491	91.6	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L3	MGIIa-L3 sp11892u
+WA_Ribosomal_S8_212829	96.1	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Halieaceae	Luminiphilus	Luminiphilus sp002721785
+WA_Ribosomal_S8_1472352	91.1	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UBA10066	GCA-002727735	None
+WA_Ribosomal_S8_918881	93.0	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_556898	97.7	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_929123	93.2	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	UBA7377	None
+WA_Ribosomal_S8_1472353	100.0	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UBA10066	GCA-002727735	None
+WA_Ribosomal_S8_457571	96.9	Bacteria	Actinobacteriota	Acidimicrobiia	Acidimicrobiales	Ilumatobacteraceae	Casp-actino5	None
+WA_Ribosomal_S8_1570656	95.3	Bacteria	Proteobacteria	Alphaproteobacteria	TMED109	TMED131	TMED62	TMED62 sp902615805
+WA_Ribosomal_S8_704872	96.1	Bacteria	Marinisomatota	Marinisomatia	Marinisomatales	Marinisomataceae	Marinisoma	None
+WA_Ribosomal_S8_689000	100.0	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Crocinitomicaceae	UBA952	UBA952 sp011522905
+WA_Ribosomal_S8_189802	97.6	Bacteria	Desulfobacterota	UBA1144	UBA1144	UBA1144	TMED126	TMED126 sp002701605
+WA_Ribosomal_S8_905582	96.1	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA11663	UBA11663 sp002729115
+WA_Ribosomal_S8_906094	93.3	Bacteria	Planctomycetota	UBA1135	UBA1135	GCA-002686595	GCA-2862085	GCA-2862085 sp002862085
+WA_Ribosomal_S8_1154414	100.0	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UA16	UBA11663	None
+WA_Ribosomal_S8_802673	91.4	Bacteria	Actinobacteriota	Acidimicrobiia	Actinomarinales	Actinomarinaceae	Actinomarina	Actinomarina sp902576605
+WA_Ribosomal_S8_830833	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	AAA536-G10	TMED54	TMED54 sp902615025
+WA_Ribosomal_S8_1358199	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	UBA7985	UBA7985	UBA7985	None
+WA_Ribosomal_S8_1708408	93.0	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp000299095
+WA_Ribosomal_S8_1082748	100.0	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_1615741	96.9	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	MED-G82	None
+WA_Ribosomal_S8_70014	97.7	Bacteria	Planctomycetota	UBA8108	UBA1146	UBA1146	UBA12191	UBA12191 sp012269595
+WA_Ribosomal_S8_623485	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA7428	UBA7428 sp011526285
+WA_Ribosomal_S8_398208	94.6	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902598125
+WA_Ribosomal_S8_1440642	95.3	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	CACIJG01	CACIJG01 sp002703515
+WA_Ribosomal_S8_4995	95.3	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	AG-339-G14	MEDG-81	MEDG-81 sp902561325
+WA_Ribosomal_S8_705924	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	MED-G11	None
+WA_Ribosomal_S8_770948	90.8	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	TMED113	GCA-2718035	GCA-2718035 sp902520385
+WA_Ribosomal_S8_1068934	92.2	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	Poseidonia	Poseidonia sp002689105
+WA_Ribosomal_S8_721799	93.5	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	UBA7377	None
+WA_Ribosomal_S8_1248137	96.9	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	Synechococcus sp000153825
+WA_Ribosomal_S8_132492	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	UBA8309	UBA8309 sp002686685
+WA_Ribosomal_S8_1547664	97.7	Bacteria	Actinobacteriota	Acidimicrobiia	Actinomarinales	Actinomarinaceae	Actinomarina	Actinomarina sp902580215
+WA_Ribosomal_S8_1261457	91.5	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L1	None
+WA_Ribosomal_S8_1491859	96.1	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	SCGC-AAA076-P13	SCGC-AAA076-P13 sp902556355
+WA_Ribosomal_S8_884117	90.7	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Thalassarchaeaceae	MGIIb-N1	MGIIb-N1 sp002712645
+WA_Ribosomal_S8_250262	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	VMDH01	VMDH01 sp008080945
+WA_Ribosomal_S8_1657751	91.4	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	None	None
+WA_Ribosomal_S8_778648	92.1	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Pedosphaerales	UBA1096	UBA1096	UBA1096 sp002453165
+WA_Ribosomal_S8_1330581	93.7	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	UBA7377	None
+WA_Ribosomal_S8_497050	92.2	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	RCC307	RCC307 sp002168155
+WA_Ribosomal_S8_999323	98.0	Bacteria	Planctomycetota	Planctomycetes	Pirellulales	Pirellulaceae	GCA-2862225	GCA-2862225 sp002862225
+WA_Ribosomal_S8_1305500	96.1	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	AAA536-G10	AAA536-G10	None
+WA_Ribosomal_S8_1484189	96.9	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	SAR86	GCA-2707915	GCA-2707915 sp902594545
+WA_Ribosomal_S8_209310	95.3	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_38815	96.1	Bacteria	Actinobacteriota	Acidimicrobiia	Actinomarinales	Actinomarinaceae	Actinomarina	None
+WA_Ribosomal_S8_1119134	100.0	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	HIMB100	None
+WA_Ribosomal_S8_1673630	91.4	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_1504162	94.7	Bacteria	Marinisomatota	Marinisomatia	Marinisomatales	UBA1611	TMED80	TMED80 sp002170405
+WA_Ribosomal_S8_1717667	91.4	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902554335
+WA_Ribosomal_S8_567716	95.3	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Halieaceae	Luminiphilus	None
+WA_Ribosomal_S8_88484	97.5	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	UBA7430	MED-G21	MED-G21 sp002457305
+WA_Ribosomal_S8_95654	93.8	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	TMED113	GCA-2718035	GCA-2718035 sp002718035
+WA_Ribosomal_S8_271780	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	HIMB11	None
+WA_Ribosomal_S8_619944	97.7	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter ubique
+WA_Ribosomal_S8_46506	97.7	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
+WA_Ribosomal_S8_1351594	100.0	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L2	None
+WA_Ribosomal_S8_1718190	90.2	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Schleiferiaceae	UBA10364	UBA10364 sp012269745
+WA_Ribosomal_S8_1269173	95.3	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902515095
+WA_Ribosomal_S8_680375	90.1	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	UBA226	UBA226 sp002505935
+WA_Ribosomal_S8_30648	98.6	Bacteria	Cyanobacteria	Cyanobacteriia	PCC-6307	Cyanobiaceae	Synechococcus	None
+WA_Ribosomal_S8_776633	93.0	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-L2	MGIIa-L2 sp002706065
+WA_Ribosomal_S8_964026	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902576045
+WA_Ribosomal_S8_562621	94.0	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	HTCC2089	UBA9926	UBA9926 sp002728935
+WA_Ribosomal_S8_101313	92.2	Bacteria	Marinisomatota	Marinisomatia	Marinisomatales	UBA1611	GCA-002708715	GCA-002708715 sp002691285
+WA_Ribosomal_S8_887235	97.7	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902546145
+WA_Ribosomal_S8_488862	90.8	Archaea	None	None	None	None	None	None
+WA_Ribosomal_S8_1109959	96.9	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	AG-339-G14	MEDG-81	None
+WA_Ribosomal_S8_1503175	98.0	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	HIMB100	None
+WA_Ribosomal_S8_1214920	96.1	Bacteria	Planctomycetota	Planctomycetes	Pirellulales	Pirellulaceae	GCA-2862225	GCA-2862225 sp002862225
+WA_Ribosomal_S8_335303	94.6	Bacteria	Proteobacteria	Alphaproteobacteria	MPNO01	MPNO01	UBA830	UBA830 sp002471575
+WA_Ribosomal_S8_869319	92.2	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp902598735
+WA_Ribosomal_S8_1418190	93.8	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	Poseidonia	Poseidonia sp002495645
+WA_Ribosomal_S8_752078	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	AG-339-G14	MEDG-81	None
+WA_Ribosomal_S8_815568	91.5	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Halieaceae	Luminiphilus	None
+WA_Ribosomal_S8_350677	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	WTJO01	WTJO01 sp011524805
+WA_Ribosomal_S8_575445	97.7	Bacteria	Actinobacteriota	Acidimicrobiia	Actinomarinales	Actinomarinaceae	Actinomarina	None
+WA_Ribosomal_S8_1750493	93.7	Bacteria	Proteobacteria	Gammaproteobacteria	GCA-002705445	GCA-002716945	GCA-2728355	GCA-2728355 sp002728355
+WA_Ribosomal_S8_1499618	93.6	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Methyloligellaceae	Methyloceanibacter	None
+WA_Ribosomal_S8_628706	95.3	Bacteria	Chloroflexota	Dehalococcoidia	UBA1151	TMED-70	GCA-002700125	GCA-002700125 sp002727435
+WA_Ribosomal_S8_1421285	96.9	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	MED-G14	None
+WA_Ribosomal_S8_462309	96.9	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Litoricolaceae	HIMB30	HIMB30 sp008087055
+WA_Ribosomal_S8_1525223	97.7	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	AG-339-G14	CACNYO01	None
+WA_Ribosomal_S8_764394	97.7	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	DEV007	EC70	EC70 sp002696885
+WA_Ribosomal_S8_563179	95.8	Bacteria	Proteobacteria	Alphaproteobacteria	Puniceispirillales	Puniceispirillaceae	HIMB100	None
+WA_Ribosomal_S8_1264620	98.4	Bacteria	Actinobacteriota	Acidimicrobiia	Actinomarinales	Actinomarinaceae	Actinomarina	Actinomarina sp902580215
+WA_Ribosomal_S8_97260	96.9	Bacteria	Proteobacteria	Alphaproteobacteria	Parvibaculales	RS24	Micropelagos	Micropelagos thuwalensis
+WA_Ribosomal_S8_1057262	97.7	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Schleiferiaceae	UBA10364	None
+WA_Ribosomal_S8_170992	94.1	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Pedosphaerales	AAA164-E04	UBA7971	UBA7971 sp002686885
+WA_Ribosomal_S8_1579505	98.4	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	SAR86	GCA-2707915	GCA-2707915 sp003212335
+WA_Ribosomal_S8_360950	98.4	Bacteria	Actinobacteriota	Acidimicrobiia	Actinomarinales	Actinomarinaceae	Actinomarina	Actinomarina sp902580215
+WA_Ribosomal_S8_121335	96.9	Bacteria	Planctomycetota	UBA1135	UBA1135	GCA-002686595	GCA-2862085	GCA-2862085 sp002862085
+WA_Ribosomal_S8_1453560	97.6	Bacteria	Proteobacteria	Gammaproteobacteria	Chromatiales	Sedimenticolaceae	VMDJ01	VMDJ01 sp008080925
+WA_Ribosomal_S8_84986	92.4	Archaea	Thermoplasmatota	Poseidoniia	Poseidoniales	Poseidoniaceae	MGIIa-K2	MGIIa-K2 sp002719395
+WA_Ribosomal_S8_1168379	90.8	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	UBA7428	UBA7428 sp011526285
+WA_Ribosomal_S8_841212	93.8	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	Pelagibacter sp003216235
+WA_Ribosomal_S8_1724414	96.1	Bacteria	Proteobacteria	Gammaproteobacteria	SAR86	D2472	SAR86A	None
+WA_Ribosomal_S8_1472511	94.3	Bacteria	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Pelagibacter	None
