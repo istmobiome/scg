@@ -1,7 +1,0 @@
-unique_entry_id	gene_callers_id	source	gene_name	gene_hmm_id
-2639	1378876	Archaea_76	RNase_HII	PF01351.18
-4727	58055	Archaea_76	TIM	PF00121.18
-7727	1651804	Archaea_76	RNase_HII	PF01351.18
-9427	290261	Archaea_76	RNA_pol_Rpb6	PF01192.22
-10517	605830	Archaea_76	Ham1p_like	PF01725.16
-13355	1472694	Archaea_76	tRNA-synt_1d	PF00750.19
