@@ -1,0 +1,13 @@
+unique_entry_id	gene_callers_id	source	gene_name	gene_hmm_id
+1766	1276915	Archaea_76	Ribosomal_L14	PF00238.19
+1767	1276916	Archaea_76	Ribosomal_S17	PF00366.20
+1768	1276917	Archaea_76	Ribosomal_L29	PF00831.23
+1769	1276920	Archaea_76	Ribosomal_L16	PF00252.18
+1770	1276922	Archaea_76	Ribosomal_L22	PF00237.19
+1771	1276923	Archaea_76	Ribosomal_S19	PF00203.21
+1772	1276925	Archaea_76	Ribosomal_L23	PF00276.20
+1773	1276926	Archaea_76	Ribosomal_L4	PF00573.22
+1774	1276927	Archaea_76	Ribosomal_L3	PF00297.22
+5351	128468	Archaea_76	AdoHcyase	PF05221.17
+5509	153130	Archaea_76	Ribosomal_S2	PF00318.20
+10880	655200	Archaea_76	tRNA-synt_1c	PF00749.21

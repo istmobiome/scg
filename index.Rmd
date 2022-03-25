@@ -71,7 +71,7 @@ download_dir(
   button_type = "success",
   has_icon = TRUE,
   icon = "fa fa-save",
-  self_contained = FALSE
+  self_contained = TRUE
 )
 ```
 
