@@ -1,0 +1,6 @@
+unique_entry_id	gene_callers_id	source	gene_name	gene_hmm_id
+2124	1317080	Archaea_76	Ribosomal_S9	PF00380.19
+2125	1317081	Archaea_76	Ribosomal_L13	PF00572.18
+5608	165785	Archaea_76	tRNA-synt_1c	PF00749.21
+5725	883628	Archaea_76	Ham1p_like	PF01725.16
+10581	612837	Archaea_76	tRNA-synt_1c	PF00749.21
