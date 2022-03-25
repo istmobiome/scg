@@ -64,14 +64,13 @@ In the first section of this workflow, we assess the taxonomy and coverage of SC
 The link below gives access to all data and data products generated in the workflow. This is a 7.5Mb zip file. 
 
 ```{r, eval=TRUE, echo=FALSE}
-download_dir(
-  path = "files/MAG/",
-  output_name = "WA_MAG_SCG_analysis_files",
+download_link(
+  link = "https://github.com/istmobiome/scg/tree/main/files/MAG",
   button_label = "Download the full data pack here",
   button_type = "success",
   has_icon = TRUE,
   icon = "fa fa-save",
-  self_contained = TRUE
+  self_contained = FALSE
 )
 ```
 
@@ -1105,9 +1104,8 @@ load("page_build/index_mg.rdata")
 The link below gives access to all data and data products generated in the workflow. This is a 25.7Mb zip file. 
 
 ```{r, eval=TRUE, echo=FALSE}
-download_dir(
-  path = "files/MG/",
-  output_name = "WA_Metagenome_SCG_analysis_files",
+download_link(
+  link = "https://github.com/istmobiome/scg/tree/main/files/MG",
   button_label = "Download the full data pack here",
   button_type = "success",
   has_icon = TRUE,
@@ -1115,6 +1113,7 @@ download_dir(
   self_contained = FALSE
 )
 ```
+
 
 There are a number of data products generated in this workflow. Below is a description of each product  and links to download the data. Some of this information is redundant, others may not be useful, but all are included here for posterity. 
 
