@@ -5,7 +5,7 @@ description: |
   SCG analysis of WA MAGs
 output_dir: "public_build"
 creative_commons: CC BY
-exclude: ["public", "README.html", "README.md", "page_build", "public_build", "files/Archaea_76", "files/Bacteria_71"]
+exclude: ["public", "README.html", "README.md", "page_build", "public_build"]
 navbar:
   icon: icon.png
   title: ""
