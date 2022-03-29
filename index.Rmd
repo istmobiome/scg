@@ -65,7 +65,7 @@ The link below gives access to all data and data products generated in the workf
 
 ```{r, eval=TRUE, echo=FALSE}
 download_link(
-  link = "https://github.com/istmobiome/scg/tree/main/files/MAG",
+  link = "https://github.com/istmobiome/scg/raw/main/files/MAG_WF_DATA.zip",
   button_label = "Download the full data pack here",
   button_type = "success",
   has_icon = TRUE,
@@ -84,7 +84,7 @@ First, a description of individual tables.
 
 | **file name**                                                                          | **description **                                            |
 |----------------------------------------------------------------------------------------|-------------------------------------------------------------|
-| [00_MAGS.txt](files/MAG/00_MAGS.txt)                                                   | list of all MAGs in the collection.                         |
+| [00_WA-MAGS.txt](files/MAG/00_WA-MAGS.txt)                                                   | list of all MAGs in the collection.                         |
 | [01_hmm_hits_info.txt](files/MAG/01_hmm_hits_info.txt)                                 | HMM profiles in the contigs database                        |
 | [02_Archaea_76.txt](files/MAG/02_Archaea_76.txt)                                       | description of Archaea_76 HMM profile.                      |
 | [02_Bacteria_71.txt](files/MAG/02_Bacteria_71.txt)                                     | description of Bacteria_71 HMM profile.                     |
@@ -136,7 +136,6 @@ hmm_hits_info <- read_delim("files/MAG/01_hmm_hits_info.txt", delim = "\t")
 
 <small>`r caption_tab("hmm_hits_info")`</small>
 
-
 ```{r, eval=TRUE, layout="l-page", echo=FALSE}
 seq_table <- hmm_hits_info
 reactable(seq_table,
@@ -177,17 +176,9 @@ reactable(seq_table,
 rm(seq_table)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-tmp_download <- read_delim("files/MAG/01_hmm_hits_info.txt", delim = "\t")
-download_this(tmp_download,
-    output_name = "01_hmm_hits_info",
-    output_extension = ".csv",
-    button_label = "csv file of HMM hits info",
-    button_type = "default",
-    csv2 = FALSE,
-    has_icon = TRUE,
-    icon = "fa fa-save")
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack file** [00_WA-MAGS.txt](files/MAG/00_WA-MAGS.txt) 
+::::
 
 For this analysis we are mainly interested in the `Archaea_76` and `Bacteria_71` profiles. Here we need to parse the `genes` column for both sources and create a master list of target single copy genes (SCG) for each. 
 
@@ -248,20 +239,11 @@ write.table(bact_tbl, "files/MAG/02_Bacteria_71.txt", col.names  = TRUE,
             row.names = FALSE, sep = "\t", quote = FALSE)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MAG", pattern = "02_", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "02_HMM_SCG_INFO",
-  button_label = "SCG info for HMM profiles",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**   
+- [02_Archaea_76.txt](files/MAG/02_Archaea_76.txt)  
+- [02_Bacteria_71.txt](files/MAG/02_Bacteria_71.txt)  
+::::
 
 Sweet. 
 
@@ -286,17 +268,9 @@ write.table(gtdb, "files/MAG/03_GTDB_Taxonomy.txt", col.names  = TRUE,
 rm(tmp_gtdb)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-tmp_download <- read_delim("files/MAG/03_GTDB_Taxonomy.txt", delim = "\t")
-download_this(tmp_download,
-    output_name = "03_GTDB_Taxonomy",
-    output_extension = ".csv",
-    button_label = "csv file of GTDB Taxonomy genes",
-    button_type = "default",
-    csv2 = FALSE,
-    has_icon = TRUE,
-    icon = "fa fa-save")
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack file** [03_GTDB_Taxonomy.txt](files/MAG/03_GTDB_Taxonomy.txt) 
+::::
 
 Now we create a master look up table containing all SCG from `Archaea_76` and `Bacteria_71`, then indicate which SCGs are also used in the GTDB_Taxonomy. 
 
@@ -348,17 +322,9 @@ reactable(seq_table,
 rm(seq_table)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-tmp_download <- read_delim("files/MAG/04_SCG_master_list.txt", delim = "\t")
-download_this(tmp_download,
-    output_name = "04_SCG_master_list",
-    output_extension = ".csv",
-    button_label = "csv file of all HMM profile genes",
-    button_type = "default",
-    csv2 = FALSE,
-    has_icon = TRUE,
-    icon = "fa fa-save")
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack file** [04_SCG_master_list.txt](files/MAG/04_SCG_master_list.txt)
+::::
 
 > It is important to note that `Archaea_76` and `Bacteria_71` share **`r nrow(scg_table %>% filter(!is.na(Archaea_76), !is.na(Bacteria_71)) )`** SCGs, `r nrow(scg_table %>% filter(!is.na(Archaea_76), !is.na(Bacteria_71),  !is.na(GTDB_Taxonomy)))` of which are GTDB taxonomy genes. 
 
@@ -383,28 +349,9 @@ anvi-estimate-genome-completeness --contigs-db 03_CONTIGS/WA-contigs.db \
                                   --output-file 05_MAG-COMPLETENESS.txt
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-tmp_download <- read_delim("files/MAG/05_MAG-COMPLETENESS.txt", delim = "\t")
-download_this(tmp_download,
-    output_name = "05_MAG-COMPLETENESS",
-    output_extension = ".csv",
-    button_label = "csv file of MAG Completeness",
-    button_type = "default",
-    csv2 = FALSE,
-    has_icon = TRUE,
-    icon = "fa fa-save")
-```
-
-
-```{r, eval=TRUE, echo=FALSE}
-mag_tax <- read_delim("files/MAG/05_MAG-TAXONOMY.txt", delim = "\t")
-mag_comp <- read_delim("files/MAG/05_MAG-COMPLETENESS.txt", delim = "\t")
-mag_summary <- dplyr::full_join(mag_comp, mag_tax, by = c("bin name" = "bin_name"))
-write.table(mag_summary, "files/MAG/06_MAG_TAXONOMY_and_COMPLETENESS.txt", col.names  = TRUE, 
-            row.names = FALSE, sep = "\t", quote = FALSE)
-tmp_mag <- mag_summary
-tmp_mag <- tmp_mag %>% dplyr::select(-contains(c("WAM_", "WAR_")))
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack file** [05_MAG-COMPLETENESS.txt](files/MAG/05_MAG-COMPLETENESS.txt)
+::::
 
 Then let's estimate MAG consensus taxonomy using `anvi-estimate-scg-taxonomy`. Here we add the flag `--compute-scg-coverages` to calculate coverage statistics of single-copy core genes for which we have taxonomic information. **Note this is not the same as computing coverage statistics for the entire MAG**, which we will do later in the workflow. 
 
@@ -416,17 +363,9 @@ anvi-estimate-scg-taxonomy --profile-db 06_MERGED/WA/PROFILE.db \
                            --collection-name DASTOOL_MAGS \
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-tmp_download <- read_delim("files/MAG/05_MAG-TAXONOMY.txt", delim = "\t")
-download_this(tmp_download,
-    output_name = "05_MAG-TAXONOMY",
-    output_extension = ".csv",
-    button_label = "csv file of MAG concensus Taxonomy",
-    button_type = "default",
-    csv2 = FALSE,
-    has_icon = TRUE,
-    icon = "fa fa-save")
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack file** [05_MAG-TAXONOMY.txt](files/MAG/05_MAG-TAXONOMY.txt)
+::::
 
 We can also rerun the command using the flag `--per-scg-output-file`, which provides taxonomic information and percent identity scores for each SCG in a MAG. So rather than a consensus taxonomy for each MAG, we get info for each SCG hit in a MAG. 
 
@@ -437,19 +376,21 @@ anvi-estimate-scg-taxonomy --profile-db 06_MERGED/WA/PROFILE.db \
                            --per-scg-output-file 05_MAG-TAXONOMY-PER-GENOME-SCG.txt
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-tmp_download <- read_delim("files/MAG/05_MAG-TAXONOMY-PER-GENOME-SCG.txt", delim = "\t")
-download_this(tmp_download,
-    output_name = "05_MAG-TAXONOMY-PER-GENOME-SCG",
-    output_extension = ".csv",
-    button_label = "csv file of Taxonomy for all MAG SCG ",
-    button_type = "default",
-    csv2 = FALSE,
-    has_icon = TRUE,
-    icon = "fa fa-save")
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack file** [05_MAG-TAXONOMY-PER-GENOME-SCG.txt](files/MAG/05_MAG-TAXONOMY-PER-GENOME-SCG.txt)
+::::
 
 OK, now we can merge the MAG completeness and the MAG taxonomy tables and view the data. We will omit the coverage statistics for now so we can focus on the MAG details.  
+
+```{r, eval=TRUE, echo=FALSE}
+mag_tax <- read_delim("files/MAG/05_MAG-TAXONOMY.txt", delim = "\t")
+mag_comp <- read_delim("files/MAG/05_MAG-COMPLETENESS.txt", delim = "\t")
+mag_summary <- dplyr::full_join(mag_comp, mag_tax, by = c("bin name" = "bin_name"))
+write.table(mag_summary, "files/MAG/06_MAG_TAXONOMY_and_COMPLETENESS.txt", col.names  = TRUE, 
+            row.names = FALSE, sep = "\t", quote = FALSE)
+tmp_mag <- mag_summary
+tmp_mag <- tmp_mag %>% dplyr::select(-contains(c("WAM_", "WAR_")))
+```
 
 <small>`r caption_tab("MAG_TAXONOMY_and_COMPLETENESS")`</small>
 
@@ -496,17 +437,9 @@ rm(seq_table)
 rm(tmp_mag)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-tmp_download <- read_delim("files/MAG/06_MAG_TAXONOMY_and_COMPLETENESS.txt", delim = "\t")
-download_this(tmp_download,
-    output_name = "06_MAG_TAXONOMY_and_COMPLETENESS",
-    output_extension = ".csv",
-    button_label = "csv file of MAG Completeness & Taxonomy",
-    button_type = "default",
-    csv2 = FALSE,
-    has_icon = TRUE,
-    icon = "fa fa-save")
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack file** [06_MAG_TAXONOMY_and_COMPLETENESS.txt](files/MAG/06_MAG_TAXONOMY_and_COMPLETENESS.txt)
+::::
 
 Ok, let's review. 
 
@@ -565,20 +498,11 @@ anvi-script-gen-hmm-hits-matrix-across-genomes \
                  --output-file 07_Bacteria_71-across-MAGs.txt
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MAG", pattern = "07_", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "07_HITS-ACROSS-MAGs",
-  button_label = "Distribution of SCG hits across MAGs",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**   
+- [07_Archaea_76-across-MAGs.txt](files/MAG/07_Archaea_76-across-MAGs.txt)  
+- [07_Bacteria_71-across-MAGs.txt](files/MAG/07_Bacteria_71-across-MAGs.txt)
+::::
 
 Sweet, now for both HMM profiles, we can look at **a**) the number of MAGs represented by each SCG and **b**) the number of unique SCG present in each MAG. Of course keep in mind that we ran both HMM profiles across all MAGs, *regardless of their domain classification*. So what this means for example is that we expect an Archaea MAG to have fewer hits when run against `Bacteria_71` than against `Archaea_76`. 
 
@@ -887,20 +811,11 @@ anvi-get-sequences-for-hmm-hits --internal-genomes internal-genomes.txt
 
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MAG", pattern = "-sequences.fa", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "08_MAGS-SCG-sequences",
-  button_label = "fasta files of SCG hits",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**   
+- [08_MAGS-Archaea_76-sequences.fa](files/MAG/08_MAGS-Archaea_76-sequences.fa)  
+- [08_MAGS-Bacteria_71-sequences.fa](files/MAG/08_MAGS-Bacteria_71-sequences.fa)
+::::
 
 ```{r, code_folding=TRUE}
 tmp_fa <- seqinr::read.fasta("files/MAG/08_MAGS-Archaea_76-sequences.fa", 
@@ -961,20 +876,11 @@ write.table(bact71_gene_hits, "files/MAG/09_MAGS-Bacteria_71-details.txt",
               col.names  = TRUE, row.names = FALSE, sep = "\t", quote = FALSE)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MAG", pattern = "09_MAGS-", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "09_MAGS-SCG-details",
-  button_label = "detailed data for all SCG hits",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**  
+- [09_MAGS-Archaea_76-details.txt](files/MAG/09_MAGS-Archaea_76-details.txt)  
+- [09_MAGS-Bacteria_71-details.txt](files/MAG/09_MAGS-Bacteria_71-details.txt)
+::::
 
 The analysis yielded `r nrow(bact71_gene_hits)` genes from MAGs that had hits to the Bacteria_71 profile. 
 
@@ -1084,6 +990,10 @@ for (mag in wa_mags) {
 }
 ```
 
+```{r, echo=FALSE, eval=FALSE}
+zip(zipfile = "files/MAG_WF_DATA.zip", files = "files/MAG/")
+```
+
 
 ```{r, echo=FALSE}
 objects()
@@ -1105,7 +1015,7 @@ The link below gives access to all data and data products generated in the workf
 
 ```{r, eval=TRUE, echo=FALSE}
 download_link(
-  link = "https://github.com/istmobiome/scg/tree/main/files/MG",
+  link = "https://github.com/istmobiome/scg/raw/main/files/MG_WF_DATA.zip",
   button_label = "Download the full data pack here",
   button_type = "success",
   has_icon = TRUE,
@@ -1171,20 +1081,11 @@ anvi-get-sequences-for-hmm-hits --contigs-db 03_CONTIGS/WA-contigs.db \
 
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MG", pattern = "-sequences.fa", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "01_WA-sequences",
-  button_label = "fasta files of SCG hits",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**   
+- [01_WA-Archaea_76-sequences.fa](files/MG/01_WA-Archaea_76-sequences.fa)  
+- [01_WA-Bacteria_71-sequences.fa](files/MG/01_WA-Bacteria_71-sequences.fa)
+::::
 
 For the record, the deflines contain information on the source HMM profile, e-value score, parent contig id, gene callers id, gene name, gene length, and the gene's start/stop positions. Here we use the `seqinr` package to read the fasta file and then I parse out the relevant information.
 
@@ -1248,6 +1149,12 @@ anvi-script-get-hmm-hits-per-gene-call --contigs-db 03_CONTIGS/WA-contigs.db \
                                        --output-file 02_WA-Bacteria_71-HITS.txt
 ```
 
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**   
+- [02_WA-Archaea_76-HITS.txt](files/MG/02_WA-Archaea_76-HITS.txt)  
+- [02_WA-Bacteria_71-HITS.txt](files/MG/02_WA-Bacteria_71-HITS.txt)
+::::
+
 Now I can join the two tables by `gene_callers_id` and `gene_name`. 
 
 ```{r, code_folding=TRUE, eval=TRUE}
@@ -1280,30 +1187,6 @@ bact71_gene_info <- tmp_tab
 rm(list = ls(pattern = "tmp_"))
 ```
 
-
-
-
-
-
-
-
-
-
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MG", pattern = "02_WA-", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "02_WA-SCG-HITS",
-  button_label = "details for all SCG hits against HMM profiles",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
-
 ## SCG Coverage 
 
 And now we can calculate coverage and detection for each SCG in our analysis. To accomplish this task, we first need to parse out the `gene_callers_id` column, remove the header, and save the file. 
@@ -1315,21 +1198,11 @@ write.table(data.frame(bact71_gene_info[,3]), "files/MG/03_WA-Bacteria_71-gene_i
             quote = FALSE, sep = "\t", col.names = FALSE, row.names = FALSE)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MG", pattern = "03_WA-", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "03_WA-GENE-HIT-IDS",
-  button_label = "Lists of gene IDs",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
-
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**   
+- [03_WA-Archaea_76-gene_ids.txt](files/MG/03_WA-Archaea_76-gene_ids.txt)  
+- [03_WA-Bacteria_71-gene_ids.txt](files/MG/03_WA-Bacteria_71-gene_ids.txt)
+::::
 
 Then run `anvi-export-gene-coverage-and-detection`. 
 
@@ -1353,20 +1226,14 @@ bact71_cov <- read_delim("files/MG/04_WA-Bacteria_71-RAW-GENE-COVERAGES.txt", de
 bact71_det <- read_delim("files/MG/04_WA-Bacteria_71-RAW-GENE-DETECTION.txt", delim = "\t")
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MG", pattern = "04_WA-", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "04_WA-COVERAGE-DETECTION",
-  button_label = "Raw coverage & detection data",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
+
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**  
+- [04_WA-Archaea_76-RAW-GENE-COVERAGES.txt](files/MG/04_WA-Archaea_76-RAW-GENE-COVERAGES.txt)     
+- [04_WA-Archaea_76-RAW-GENE-DETECTION.txt](files/MG/04_WA-Archaea_76-RAW-GENE-DETECTION.txt)  
+- [04_WA-Bacteria_71-RAW-GENE-COVERAGES.txt](files/MG/04_WA-Bacteria_71-RAW-GENE-COVERAGES.txt)  
+- [04_WA-Bacteria_71-RAW-GENE-DETECTION.txt](files/MG/04_WA-Bacteria_71-RAW-GENE-DETECTION.txt)
+::::
 
 Once we run `anvi-export-gene-coverage-and-detection` for both HMM profiles we can combine these data with all of the other SCG stats generated above. 
 
@@ -1408,20 +1275,15 @@ write.table(bact71_det, "files/MG/05_WA-Bacteria_71-GENE-DETECTION.txt",
             quote = FALSE, sep = "\t", col.names = TRUE, row.names = FALSE)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-path_files <- list.files(path = "files/MG", pattern = "05_WA-", 
-                         all.files = TRUE, full.names = TRUE, 
-                         recursive = FALSE, ignore.case = TRUE)
-download_file(
-  path = path_files,
-  output_name = "05_WA-GENE-COVERAGE-DETECTION",
-  button_label = "Final coverage & detection data",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
-```
+
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack files**  
+- [05_WA-Archaea_76-GENE-COVERAGES.txt](files/MG/05_WA-Archaea_76-GENE-COVERAGES.txt)     
+- [05_WA-Archaea_76-GENE-DETECTION.txt](files/MG/05_WA-Archaea_76-GENE-DETECTION.txt)  
+- [05_WA-Bacteria_71-GENE-COVERAGES.txt](files/MG/05_WA-Bacteria_71-GENE-COVERAGES.txt)     
+- [05_WA-Bacteria_71-GENE-DETECTION.txt](files/MG/05_WA-Bacteria_71-GENE-DETECTION.txt)  
+::::
+
 ## GTDB SCG Taxonomy 
 
 Alright. Now we want the taxonomic assignment for each of the 22 SCG used by the GTDB. For this we use  `anvi-estimate-scg-taxonomy` in `--metagenome-mode`. When running in metagenome mode, anvi'o *automatically chooses the most frequent single-copy core gene* to estimate the taxonomic composition within a contigs database. However, we want taxonomic assignment for ALL genes. For this, we generate a list of the GTDB SCG and use a for loop that will run through each SCG and calculate taxonomy for all hits in our database. So this command will produce 22 files. 
@@ -1435,6 +1297,10 @@ do anvi-estimate-scg-taxonomy  --contigs-db 03_CONTIGS/WA-contigs.db  \
 done
 
 ```
+
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data directory**  06_SCG_TAXONOMY/
+::::
 
 Great. Here we use a for loop to **a**) read in each taxonomy file, **b**) do a little reformatting, and **c**) combine all data in one file.  
 
@@ -1459,17 +1325,10 @@ write.table(scg_tax, "files/MG/07_SCG_TAXONOMY.txt",
             quote = FALSE, sep = "\t", col.names = TRUE, row.names = FALSE)
 ```
 
-```{r, echo=FALSE, eval=TRUE, layout="l-body"}
-tmp_download <- read_delim("files/MG/07_SCG_TAXONOMY.txt", delim = "\t")
-download_this(tmp_download,
-    output_name = "07_SCG_TAXONOMY",
-    output_extension = ".csv",
-    button_label = "csv file of taxonomy for all SCG ",
-    button_type = "default",
-    csv2 = FALSE,
-    has_icon = TRUE,
-    icon = "fa fa-save")
-```
+
+:::: {.infobox }
+<i class="fas fa-file"></i> **Data pack file**  [07_SCG_TAXONOMY.txt](files/MG/07_SCG_TAXONOMY.txt)     
+::::
 
 <details markdown="1">
 <summary><strong>Click here</strong> for a breakdown of total hits by GTDB SCG..</summary>
@@ -1507,6 +1366,9 @@ scg_count <- scg_tax %>% dplyr::count(scg_name)
 
 </details>
 
+```{r, echo=FALSE, eval=FALSE}
+zip(zipfile = "files/MG_WF_DATA.zip", files = "files/MG/")
+```
 
 ```{r, message=FALSE, results = 'hide', eval=FALSE, echo=FALSE}
 save.image("page_build/index_mg.rdata")

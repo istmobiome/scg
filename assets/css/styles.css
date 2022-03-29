@@ -282,3 +282,37 @@ div.rt-text-content {
 d-article hr {
   margin: 30px 0px;
 }
+
+/* .blackbox:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f15b";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+ }
+*/
+/********************************/
+/* controls data callout box  */
+/********************************/
+
+.infobox {
+  padding: 1em;
+  background: #e8dbde;
+  color: #323232;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.infobox p {
+  margin: 0px 0px 0px;
+  font-size: 1em;
+}
+
+.center {
+  text-align: center;
+  font-size: 0.9em;
+}
